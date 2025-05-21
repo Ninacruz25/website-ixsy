@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTAButton from '../components/CTAButton.astro';
+// contenido 
+const content = {
+  title:"IXSY - Internet Exchange Service Yucatán",
+  ixsy: {
+    title: "IXSY",
+    sub_title: "Internet Exchange Service Yucatán",
+    description: 
+    "IXSY es una asociación civil que administra el Nodo IXP en Yucatán, fortaleciendo el tráfico de Internet de manera eficiente, segura y rentable. Basado en neutralidad, infraestructura sólida y colaboración con la comunidad, IXSY impulsa el desarrollo  digital del sureste mexicano."
+  },
+
+
+};
+---
+
+<Layout title={content.title}>
+  <div class="min-h-screen" style="background-image: url('/HOME.svg'); background-size: cover; background-position: center;">
+    <div class="container mx-auto px-4 py-16">
+      <!-- Hero Section -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center min-h-[80vh]">
+        <div class="space-y-6">
+          <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+            {content.title}
+          </h1>
+          
+          <div class="mt-8">
+            <CTAButton text="Más información" href="/ixsy_ixe" />
+          </div>
+        </div>
+        
+        <div class="hidden md:block">
+          <img src="/network_world.svg" class="w-full max-w-md mx-auto" />
+        </div>
+      </div>
+    </div>
+    
+    <!-- IXSY Section -->
+         <div class="bg-black bg-opacity-70 py-16">
+      <div class="container mx-auto px-4">
+        <h1 class="text-3xl font-bold mb-8 text-center">
+          {content.ixsy.title}
+        </h1>
+        <h2 class="text-center">
+          {content.ixsy.sub_title}
+        </h2>
+        <p class="text-gray-300 max-w-2xl mb-8 text-center">
+        {content.ixsy.description}
+        </p>
+        
+        <div class="mt-12">
+          <img src="/ixsy_google.jpg" class="w-full max-w-3xl mx-auto rounded-lg shadow-xl" />
+        </div>
+        
+        <div class="flex justify-center mt-8">
+          <div class="flex space-x-2">
+            <span class="h-2 w-2 rounded-full bg-white"></span>
+            <span class="h-2 w-2 rounded-full bg-gray-600"></span>
+            <span class="h-2 w-2 rounded-full bg-gray-600"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- IXSY Fellows Section -->
+    <div class="bg-black bg-opacity-70 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">IXSY Fellows</h2>
+        <p class="text-gray-300 max-w-2xl mb-8">
+          "Contribuimos al futuro digital de nuestra Península de México impulsando el intercambio y desarrollo de tecnología de internet"
+        </p>
+        
+        <div class="mt-12">
+          <img src="/images/fellows-photo.jpg" alt="IXSY Fellows" class="w-full max-w-3xl mx-auto rounded-lg shadow-xl" />
+        </div>
+        
+        <div class="flex justify-center mt-8">
+          <div class="flex space-x-2">
+            <span class="h-2 w-2 rounded-full bg-white"></span>
+            <span class="h-2 w-2 rounded-full bg-gray-600"></span>
+            <span class="h-2 w-2 rounded-full bg-gray-600"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

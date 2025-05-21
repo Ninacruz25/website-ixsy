@@ -1,0 +1,17 @@
+---
+export interface Props {
+  text: string;
+  href: string;
+  color?: 'primary' | 'secondary';
+}
+
+const { text, href, color = 'primary' } = Astro.props;
+
+const buttonClass = color === 'primary' 
+  ? 'bg-teal-500 hover:bg-teal-600 text-white' 
+  : 'bg-blue-500 hover:bg-blue-600 text-white';
+---
+
+<a href={href} class={`inline-block px-6 py-3 rounded-md font-medium transition-colors ${buttonClass}`}>
+  {text}
+</a>
