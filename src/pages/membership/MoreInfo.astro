@@ -1,0 +1,257 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CardMembershipDetail from '../../components/Card/CardMembershipDetail';
+import CardValueSection from '../../components/Card/CardValueSection';
+
+const content = {
+  title: "Información de Membresías",
+  planes: [
+    {
+      id: "small",
+      title: "Membresía socio adherente - SMALL",
+      features: [
+        "Puerto 1GB",
+        "Conectividad local entre miembros",
+        "Acceso a caché de contenido de redes sociales",
+        "Acceso a caché de contenido de series y películas",
+        "Portal IXP Manager",
+        "Router server",
+        "DNS Recursivo",
+        "Soporte IPv6"
+      ],
+      pricing: {
+        monthly: "$3,800.00",
+        annual: "$3,800.00",
+        currency: "por mes",
+        currencyAnnual: "Anual"
+      },
+      valorAgregado: [
+        "Capacitaciones técnicas avanzadas.",
+        "Participación como oponente en Webinars.",
+        "Presencia de su organización en nuestro portal y redes sociales.",
+        "Descuentos especiales en cursos y talleres."
+      ],
+      ctaText: "COMPRAR",
+      ctaLink: "/contact"
+    },
+    {
+      id: "medium",
+      title: "Membresía socio adherente - MEDIUM",
+      subtitle: "Tamaños de puertos: 10GB, 20GB, 30GB, 40GB",
+      features: [
+        "Conectividad local entre miembros",
+        "Acceso a caché de contenido de redes sociales",
+        "Acceso a caché de contenido de series y películas",
+        "Portal IXP Manager",
+        "Router server",
+        "DNS Recursivo",
+        "Soporte IPv6"
+      ],
+      pricing: {
+        sizes: [
+          { size: "10GB", price: "$19,050.00 MXN", period: "por mes" },
+          { size: "20GB", price: "$23,750.00 MXN", period: "por mes" },
+          { size: "30GB", price: "$28,500.00 MXN", period: "por mes" },
+          { size: "40GB", price: "$33,250.00 MXN", period: "por mes" }
+        ],
+        mainPrice: "$9,500.00 MXN",
+        mainPeriod: "Anual"
+      },
+      valorAgregado: [
+        "Capacitaciones técnicas avanzadas.",
+        "Participación como oponente en Webinars.",
+        "Presencia de su organización en nuestro portal y redes sociales.",
+        "Descuentos especiales en cursos y talleres."
+      ],
+      ctaText: "COMPRAR",
+      ctaLink: "/contact"
+    },
+    {
+      id: "large",
+      title: "Membresía socio adherente - LARGE",
+      features: [
+        "Puerto 100GB",
+        "Conectividad local entre miembros",
+        "Acceso a caché de contenido de redes sociales",
+        "Acceso a caché de contenido de series y películas",
+        "Portal IXP Manager",
+        "Router server",
+        "DNS Recursivo",
+        "Soporte IPv6"
+      ],
+      pricing: {
+        monthly: "$47,500.00 MXN",
+        annual: "$19,000.00 MXN",
+        currency: "por mes",
+        currencyAnnual: "Anual"
+      },
+      valorAgregado: [
+        "Capacitaciones técnicas avanzadas.",
+        "Participación como oponente en Webinars.",
+        "Presencia de su organización en nuestro portal y redes sociales.",
+        "Descuentos especiales en cursos y talleres."
+      ],
+      ctaText: "COMPRAR",
+      ctaLink: "/contact"
+    },
+    {
+      id: "socio-proveedor",
+      title: "Membresía SOCIO - PROVEEDOR",
+      features: [
+        "Acceso a eventos como expositores",
+        "Oportunidad de patrocinio",
+        "Acceso a comités en carácter de asesor y colaborador",
+        "Networking y sinergia con socios"
+      ],
+      pricing: {
+        annual: "$19,000.00 MXN",
+        currencyAnnual: "Anual"
+      },
+      valorAgregado: [
+        "Capacitaciones técnicas avanzadas.",
+        "Participación como oponente en Webinars.",
+        "Presencia de su organización en nuestro portal y redes sociales.",
+        "Descuentos especiales en cursos y talleres."
+      ],
+      isSpecial: true,
+      ctaText: "COMPRAR",
+      ctaLink: "/contact"
+    }
+  ],
+  condiciones: {
+    title: "CONDICIONES",
+    terms: [
+      "Precios Exentos de IVA",
+      "Moneda en pesos mexicanos pudiendo variar de acuerdo a aumento repetitivo del dólar en el tipo de cambio.",
+      "La facturación por el uso de puertos es mensual."
+    ]
+  }
+};
+---
+
+<Layout title={content.title}>
+  <!-- Contenedor principal con fondo único -->
+  <div 
+    class="min-h-screen bg-cover bg-center"
+    style="background-image: url('/IXSY.svg');"
+  >
+    <!-- Overlay global -->
+    <div class="absolute inset-0 bg-black/50 z-5"></div>
+    
+    <!-- Sección de Membresías - Grid de 3 columnas -->
+    <section class="relative py-20 pt-32">
+      <div class="relative z-10 container mx-auto px-4">
+        
+        <!-- Grid principal de 3 columnas -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-12">
+          {/* Columna 1 - SMALL */}
+          <div class="space-y-8">
+            <CardMembershipDetail 
+              client:load 
+              membership={content.planes[0]}
+              showGlow={false}
+            />
+            <CardValueSection 
+              client:load 
+              title="VALOR AGREGADO"
+              items={content.planes[0].valorAgregado}
+              accentColor="teal"
+              iconType="arrow"
+            />
+          </div>
+
+          {/* Columna 2 - MEDIUM */}
+          <div class="space-y-8">
+            <CardMembershipDetail 
+              client:load 
+              membership={content.planes[1]}
+              showGlow={false}
+            />
+            <CardValueSection 
+              client:load 
+              title="VALOR AGREGADO"
+              items={content.planes[1].valorAgregado}
+              accentColor="teal"
+              iconType="arrow"
+            />
+          </div>
+
+          {/* Columna 3 - LARGE */}
+          <div class="space-y-8">
+            <CardMembershipDetail 
+              client:load 
+              membership={content.planes[2]}
+              showGlow={false}
+            />
+            <CardValueSection 
+              client:load 
+              title="VALOR AGREGADO"
+              items={content.planes[2].valorAgregado}
+              accentColor="teal"
+              iconType="arrow"
+            />
+          </div>
+        </div>
+
+        {/* SOCIO PROVEEDOR - Centrado */}
+        <div class="flex justify-center">
+          <div class="max-w-md w-full space-y-8">
+            <CardMembershipDetail 
+              client:load 
+              membership={content.planes[3]}
+              showGlow={false}
+            />
+            <CardValueSection 
+              client:load 
+              title="VALOR AGREGADO"
+              items={content.planes[3].valorAgregado}
+              accentColor="cyan"
+              iconType="arrow"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Condiciones (Global) -->
+    <section class="relative py-16 pb-20">
+      <div class="relative z-10 container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          {/* Título */}
+          <div class="text-center mb-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+              {content.condiciones.title}
+            </h2>
+          </div>
+
+          {/* Card de Condiciones */}
+          <CardValueSection 
+            client:load 
+            title=""
+            items={content.condiciones.terms}
+            accentColor="teal"
+            iconType="bullet"
+          />
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  /* Animaciones suaves */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  section > div {
+    animation: fadeInUp 0.8s ease-out;
+  }
+</style>

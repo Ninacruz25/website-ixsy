@@ -1,0 +1,434 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ButtonIXSY from '../../components/ButtonIXSY/ButtonIXSY'
+
+
+// Datos de los recursos por sección
+const recursos = {
+  articulos: [
+    {
+      titulo: "Diagnostico de la Conectividad Digital en la Peninsula de Yucatan",
+      pdf: "https://efts-group.com/wp-content/uploads/2025/01/20250131_Informe_Diagnostico_SMC_Yucatan_MX.pdf",
+      imagen: "/public/articulo_1.jpg"
+    },
+    {
+      titulo: "Peering en México IXP Regionales",
+      pdf: "https://img1.wsimg.com/blobby/go/76ec4aed-c739-43df-97c0-1886adc9ab12/20240403_Articulo_IXP_Regional_IXSY.pdf",
+      imagen: "/recursos/peering-mexico.jpg"
+    },
+    {
+      titulo: "Revista del programa IXSY Fellows 2022 y 2023",
+      pdf: "https://img1.wsimg.com/blobby/go/76ec4aed-c739-43df-97c0-1886adc9ab12/20240109_RESENA_PROGRAMA_IXSY_FELLOWS2022-2023.pdf",
+      imagen: "/recursos/revista-fellows.jpg"
+    },
+    {
+      titulo: "Reseña IXSY Meeting 2023",
+      pdf: "https://img1.wsimg.com/blobby/go/76ec4aed-c739-43df-97c0-1886adc9ab12/20231008_Resena_IXSY_Meeting_2023.pdf",
+      imagen: "/recursos/resena-meeting-2023.jpg"
+    },
+    {
+      titulo: "Buenas nuevas desde IXSY, IXP Yucatan",
+      pdf: "https://img1.wsimg.com/blobby/go/76ec4aed-c739-43df-97c0-1886adc9ab12/Articulo_julio_2023_nuevas_noticias_IXSY.pdf",
+      imagen: "/recursos/buenas-nuevas-ixsy.jpg"
+    }
+  ],
+  webinars: [
+    {
+      titulo: "Score Municipal de Conectividad: Una Nueva Forma de Evaluar el Acceso a los Servicios de Internet",
+      description: "Las oportunidades que ofrece la colaboración entre EFTS Group, IXSY y Ookla para identificar las desigualdades en el acceso a los servicios de Internet.",
+      fecha: "17 de enero de 2025, 11:00 AM (México) / 17:00 UTC",
+      speakers: "Carmen Denis (Presidente, Internet Exchange Services Yucatán - IXSY) / Pedro Direne (Director Comercial, Ookla) / Enrique González (Director de Desarrollo de Negocios, EFTS Group) / Moderador: Miguel Sánchez Meráz (Profesor-Investigador, IPN)",
+      registro: "https://lnkd.in/geV_sKqZ",
+      imagen: "/webinar/webinar_4.jpg",
+      enlace: "https://www.facebook.com/photo.php?fbid=1028775945961325&set=pb.100064867863196.-2207520000&type=3"
+    },
+    {
+      titulo: "IXP en el Punto de Inflexión Digital",
+      description: "Fortaleciendo Internet con Neutralidad, Resiliencia e Innovación",
+      fecha: "5 de agosto de 2025 / 11:00 AM (México) / 17:00 UTC",
+      speakers: "Carmen Denis (IXP Yucatán) / Omar Vega (DE-CIX)",
+      registro: "https://lnkd.in/geV_sKqZ",
+      aliados: "LAC-IX, ANUIES TIC, CEDIIES, AMCID MX, EFTS Group, CANIETI Sureste",
+      imagen: "/webinar/webinar_1.jpg",
+      enlace: "https://www.facebook.com/photo.php?fbid=1180024980836420&set=pb.100064867863196.-2207520000&type=3"
+    },
+    {
+      titulo: "Nueva Ley de Materia de Telecomunicaciones: Claves, Desafíos y Oportunidades",
+      description: "Todo lo que debes saber de la Nueva Ley de Telecomunicaciones",
+      fecha: "17 de julio de 2025 / 17:00 (Hora Ciudad de México)",
+      speakers: "Rubén Salazar / Sofía Solís",
+      registro: "https://lnkd.in/geV_sKqZ",
+      imagen: "/webinar/webinar_2.jpg",
+      enlace: "https://www.facebook.com/photo.php?fbid=1165812028924382&set=pb.100064867863196.-2207520000&type=3"
+    },
+    {
+      titulo: "ISP 4.0 — IA para ISPs",
+      description: "Guía práctica para empezar hoy mismo",
+      fecha: "10 de julio de 2025 / 17:00 (Hora Ciudad de México)",
+      speakers: "Franco Micalizzi ((Director de ExpansIA en Socium y productor en LACNIC)",
+      registro: "https://lnkd.in/geV_sKqZ",
+      imagen: "/webinar/webinar_3.png",
+      enlace: "https://www.facebook.com/photo.php?fbid=1160150052823913&set=pb.100064867863196.-2207520000&type=3"
+    }
+  ],
+  procedimientos: [
+    {
+      title: "Políticas de peering",
+      description: "Políticas sobre el intercambio de tráfico entre participantes del IXP.",
+      pdfPath: "/pdfs/politicas-peering.pdf",
+      content: "El intercambio de tráfico en Internet Exchange Services Yucatán A.C. - IXSY - se realiza bajo modalidades de interconexión que permiten acuerdos multilaterales y bilaterales. En el modelo BILATERAL, cualquier participante puede establecer la relación que necesite con otros participantes en el IXP. Los enrutadores de borde de los participantes establecen sesiones de BGP con los enrutadores de borde de otros participantes. En el modelo MULTILATERAL, cualquier participante que suscriba el acuerdo de adhesión debe intercambiar tráfico de manera obligatoria con todos los demás participantes que también lo hayan suscrito."
+    },
+  ],
+  noticias: [],
+  entrenamientos: []
+};
+
+const content = {
+  title: "IXSY - Recursos",
+  hero: {
+    title: "RECURSOS",
+    subtitle: "Artículos"
+  }
+};
+---
+
+<Layout title={content.title}>
+  <!-- Alpine.js -->
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  
+  <!-- Contenedor principal con fondo único -->
+  <div 
+    class="min-h-screen bg-cover bg-center"
+    style="background-image: url('/IXSY.svg');"
+    x-data="{
+      activeSection: 'articulos',
+      setActiveSection(section) {
+        this.activeSection = section;
+      }
+    }"
+  >
+    <!-- Hero Section -->
+    <section class="relative py-20 pt-32">
+      <!-- Overlay oscuro para mejorar legibilidad -->
+      <div class="absolute inset-0 bg-black/50 z-5"></div>
+      <div class="relative z-10 container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h1 
+            @click="setActiveSection('articulos')"
+            class="text-4xl md:text-6xl font-bold text-white mb-4 cursor-pointer hover:text-teal-400 transition-colors duration-300"
+          >
+            {content.hero.title}
+          </h1>
+          
+          <!-- Pestañas de secciones -->
+          <div class="mb-8">
+            <!-- Navegación de secciones -->
+            <div class="flex justify-center mb-6">
+              <div class="inline-flex bg-black/40 backdrop-blur-md rounded-full p-2 flex-wrap gap-1">
+                <button 
+                  @click="setActiveSection('articulos')"
+                  :class="activeSection === 'articulos' ? 'bg-teal-500 text-white' : 'text-gray-300 hover:text-white hover:bg-gray-700/50'"
+                  class="px-4 py-2 rounded-full text-sm font-medium transition-all duration-300"
+                >
+                  Artículos
+                </button>
+                <button 
+                  @click="setActiveSection('webinars')"
+                  :class="activeSection === 'webinars' ? 'bg-teal-500 text-white' : 'text-gray-300 hover:text-white hover:bg-gray-700/50'"
+                  class="px-4 py-2 rounded-full text-sm font-medium transition-all duration-300"
+                >
+                  Webinars
+                </button>
+                <button 
+                  @click="setActiveSection('procedimientos')"
+                  :class="activeSection === 'procedimientos' ? 'bg-teal-500 text-white' : 'text-gray-300 hover:text-white hover:bg-gray-700/50'"
+                  class="px-4 py-2 rounded-full text-sm font-medium transition-all duration-300"
+                >
+                  Procedimientos
+                </button>
+                <button 
+                  @click="setActiveSection('noticias')"
+                  :class="activeSection === 'noticias' ? 'bg-teal-500 text-white' : 'text-gray-300 hover:text-white hover:bg-gray-700/50'"
+                  class="px-4 py-2 rounded-full text-sm font-medium transition-all duration-300"
+                >
+                  Noticias
+                </button>
+                <button 
+                  @click="setActiveSection('entrenamientos')"
+                  :class="activeSection === 'entrenamientos' ? 'bg-teal-500 text-white' : 'text-gray-300 hover:text-white hover:bg-gray-700/50'"
+                  class="px-4 py-2 rounded-full text-sm font-medium transition-all duration-300"
+                >
+                  Entrenamientos
+                </button>
+              </div>
+            </div>
+
+            <!-- Contenido dinámico por sección -->
+            <div class="text-center">
+              <!-- Vista Artículos -->
+              <div x-show="activeSection === 'articulos'" x-transition>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                  Artículos
+                </h2>
+              </div>
+              
+              <!-- Vista Webinars -->
+              <div x-show="activeSection === 'webinars'" x-transition>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                  Webinars
+                </h2>
+              </div>
+              
+              <!-- Vista Procedimientos -->
+              <div x-show="activeSection === 'procedimientos'" x-transition>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                  Procedimientos
+                </h2>
+              </div>
+              
+              <!-- Vista Noticias -->
+              <div x-show="activeSection === 'noticias'" x-transition>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                  Noticias
+                </h2>
+              </div>
+              
+              <!-- Vista Entrenamientos -->
+              <div x-show="activeSection === 'entrenamientos'" x-transition>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                  Entrenamientos
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Recursos -->
+    <section class="relative py-16">
+      <div class="absolute inset-0 bg-black/50 z-5"></div>
+      <div class="relative z-10 container mx-auto px-4">
+        
+        <!-- Contenido de Artículos -->
+        <div x-show="activeSection === 'articulos'" x-transition>
+          <!-- Lista de recursos -->
+          <div class="space-y-12 max-w-5xl mx-auto">
+            {recursos.articulos.map((recurso, index) => (
+              <div class="bg-gray-800/70 backdrop-blur-lg rounded-lg p-8 border border-gray-700/50 hover:border-teal-500/50 transition-all duration-300 hover:transform hover:scale-105 group">
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                  <!-- Contenido del texto -->
+                  <div class="flex-1 text-center md:text-left">
+                    <h3 class="text-lg md:text-xl font-semibold text-white mb-6 leading-tight">
+                      {recurso.titulo}
+                    </h3>
+                    <a 
+                      href={recurso.pdf} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      class="inline-block bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105"
+                    >
+                      LEER MÁS
+                    </a>
+                  </div>
+                  
+                  <!-- Imagen -->
+                  <div class="flex-1 max-w-sm">
+                    <div class="bg-gray-300 rounded-lg overflow-hidden aspect-video shadow-lg group-hover:shadow-xl transition-all duration-300">
+                      <!-- Placeholder temporal -->
+                      <div class="w-full h-full bg-gray-300 flex items-center justify-center group-hover:bg-gray-200 transition-colors duration-300">
+                        <span class="text-gray-600 text-lg font-medium">IMAGEN</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Contenido de Webinars -->
+        <div x-show="activeSection === 'webinars'" x-transition>
+          <!-- Lista de webinars -->
+          <div class="space-y-12 max-w-5xl mx-auto">
+            {recursos.webinars.map((webinar, index) => (
+              <div class="bg-gray-800/70 backdrop-blur-lg rounded-lg p-8 border border-gray-700/50 hover:border-teal-500/50 transition-all duration-300 hover:transform hover:scale-105 group">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                  <!-- Contenido del texto -->
+                  <div class="flex-1 text-center md:text-left">
+                    <h3 class="text-lg md:text-xl font-semibold text-white mb-2 leading-tight">
+                      {webinar.titulo}
+                    </h3>
+                    
+                    {webinar.description && (
+                      <p class="text-teal-300 text-base font-medium mb-4 leading-relaxed">
+                        {webinar.description}
+                      </p>
+                    )}
+                    
+                    {webinar.fecha && (
+                      <div class="mb-3">
+                        <span class="inline-block bg-teal-500/20 text-teal-300 px-3 py-1 rounded-full text-sm font-medium">
+                          📅 {webinar.fecha}
+                        </span>
+                      </div>
+                    )}
+                    
+                    {webinar.speakers && (
+                      <div class="mb-3">
+                        <p class="text-gray-300 text-sm">
+                          <span class="text-teal-400 font-medium">🎤 Ponentes:</span> {webinar.speakers}
+                        </p>
+                      </div>
+                    )}
+                    
+                    {webinar.aliados && (
+                      <div class="mb-4">
+                        <p class="text-gray-500 text-xs">
+                          <span class="text-teal-400 font-medium">Con el apoyo de:</span> {webinar.aliados}
+                        </p>
+                      </div>
+                    )}
+
+                    <!-- Botón de acción -->
+                    <ButtonIXSY 
+                      text={webinar.registro ? "REGISTRARSE AHORA" : "LEER MÁS"} 
+                      href={webinar.registro || webinar.enlace} 
+                    />
+                  </div>
+                  
+                  <!-- Imagen -->
+                  <div class="flex-1 max-w-xs">
+                    <div class="bg-gray-300 rounded-lg overflow-hidden aspect-[3/4] shadow-lg group-hover:shadow-xl transition-all duration-300">
+                      <img 
+                        src={webinar.imagen} 
+                        alt={webinar.titulo}
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Contenido de Procedimientos -->
+        <!-- Tab Peering -->
+            <div x-show="activeTab === 'peering'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform translate-y-4" x-transition:enter-end="opacity-100 transform translate-y-0">
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8">
+                
+                <!-- Columna izquierda - Información -->
+                <div class="space-y-6">
+                  <div>
+                    <h2 class="text-3xl font-bold text-white mb-4">
+                      {procedimientos.title}
+                    </h2>
+                    <p class="text-gray-300 mb-6">
+                      {content.policies.peering.description}
+                    </p>
+                  </div>
+                  
+                  <!-- Contenido dinámico -->
+                  <p class="text-gray-300 leading-relaxed">
+                    {content.policies.peering.content}
+                  </p>
+                  
+                  <!-- Botón de descarga -->
+                  <div class="pt-6">
+                    <a 
+                      href={content.policies.peering.pdfPath}
+                      download
+                      class="inline-flex items-center px-6 py-3 bg-teal-500 hover:bg-teal-600 text-white font-medium rounded-full transition-colors duration-300"
+                    >
+                      <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      DESCARGAR PDF
+                    </a>
+                  </div>
+                </div>
+                
+                <!-- Columna derecha - Previsualización PDF -->
+                <div class="relative">
+                  <div class="bg-white rounded-lg shadow-2xl overflow-hidden">
+                    
+                    <!-- Preview del PDF como imagen o placeholder -->
+                    <div class="relative h-96 bg-gray-50 flex items-center justify-center">
+                      <!-- Imagen de preview del PDF -->
+                      <div class="text-center">
+                      <img 
+                        src="/politicas/politicas-peering_page-0001.jpg" 
+                        alt="Vista previa PDF Políticas de Peering" 
+                        class="mx-auto rounded shadow-lg max-h-80"
+                      />
+                      <p class="text-gray-600 text-sm">Vista previa del documento</p>
+                      <p class="text-gray-400 text-xs mt-1">Políticas de Peering - IXSY</p>
+                    </div>
+                      
+                      <!-- Overlay para efectos adicionales -->
+                      <div class="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent pointer-events-none"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        <!-- Contenido de Noticias -->
+        <div x-show="activeSection === 'noticias'" x-transition>
+          <div class="text-center py-16">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Noticias
+            </h3>
+            <p class="text-gray-300 text-lg">
+              Contenido próximamente...
+            </p>
+          </div>
+        </div>
+
+        <!-- Contenido de Entrenamientos -->
+        <div x-show="activeSection === 'entrenamientos'" x-transition>
+          <div class="text-center py-16">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Entrenamientos
+            </h3>
+            <p class="text-gray-300 text-lg">
+              Contenido próximamente...
+            </p>
+          </div>
+        </div>
+        
+        <!-- Espaciado adicional -->
+        <div class="mt-20"></div>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  /* Animaciones suaves */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  section > div {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  /* Efectos adicionales para las cards */
+  .group:hover .group-hover\:scale-110 {
+    transform: scale(1.1);
+  }
+  
+  /* Efecto hover mejorado para los botones */
+  .group:hover a {
+    box-shadow: 0 10px 25px rgba(20, 184, 166, 0.3);
+  }
+</style>

@@ -1,89 +1,229 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import CTAButton from '../components/CTAButton.astro';
-// contenido 
+import ButtonIXSY from '../components/ButtonIXSY/ButtonIXSY'
+import ContactForm from '../components/FormIXSY/FormIXSY'; 
+import Carrucel from '../components/Carrucel/Carrucel'
+
+// Contenido centralizado para fácil modificación
 const content = {
-  title:"IXSY - Internet Exchange Service Yucatán",
+  title: "IXSY - Internet Exchange Service Yucatán",
+  hero: {
+    title: "Internet Exchange Service Yucatán",
+    description: "Fortaleciendo la infraestructura digital del sureste mexicano a través del intercambio eficiente de tráfico de Internet.",
+  },
   ixsy: {
     title: "IXSY",
-    sub_title: "Internet Exchange Service Yucatán",
-    description: 
-    "IXSY es una asociación civil que administra el Nodo IXP en Yucatán, fortaleciendo el tráfico de Internet de manera eficiente, segura y rentable. Basado en neutralidad, infraestructura sólida y colaboración con la comunidad, IXSY impulsa el desarrollo  digital del sureste mexicano."
+    subtitle: "Internet Exchange Service Yucatán",
+    description: "IXSY es una asociación civil que administra el Nodo IXP en Yucatán, fortaleciendo el tráfico de Internet de manera eficiente, segura y rentable. Basado en neutralidad, infraestructura sólida y colaboración con la comunidad, IXSY impulsa el desarrollo digital del sureste mexicano.",
+    images:[ 
+      {
+        src:"/ixsy_google.jpg",
+        alt: "IXSY Google 1"
+      },
+      {
+        src:"/ixsy_google2.jpg",
+        alt: "IXSY Google 2"
+      },
+    ] 
   },
-
-
+  fellows: {
+    title: "IXSY Fellows",
+    description: "Contribuimos al futuro digital de nuestra Península de México impulsando el intercambio y desarrollo de tecnología de internet",
+    images: [
+      {
+        src:"/fellows/gallery-1.jpg",
+        alt: "Fellow 1"
+      },
+      {
+        src:"/fellows/gallery-2.jpg",
+        alt: "Fellow 2"
+      },
+      {
+        src:"/fellows/gallery-3.jpg",
+        alt: "Fellow 3"
+      },
+      {
+        src:"/fellows/gallery-4.jpg",
+        alt: "Fellow 4"
+      },
+    ]
+  },
+  event: {
+    title: "Próximos eventos",
+    imagen : "/ixsy_meeting_2025.jpg",
+  }
 };
 ---
 
 <Layout title={content.title}>
-  <div class="min-h-screen" style="background-image: url('/HOME.svg'); background-size: cover; background-position: center;">
-    <div class="container mx-auto px-4 py-16">
       <!-- Hero Section -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center min-h-[80vh]">
-        <div class="space-y-6">
-          <h1 class="text-4xl md:text-5xl font-bold leading-tight">
-            {content.title}
-          </h1>
+      <section class="relative py-20 pt-32">
+        <!-- Overlay oscuro para mejorar legibilidad -->
+      
+        <!-- Contenido del Hero -->
+        <div class="relative z-10 container mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <!-- Columna de texto -->
+            <div class="space-y-6 text-white">
+              <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+                {content.hero.title}
+              </h1>
+              
+              <p class="text-lg md:text-xl text-gray-200 leading-relaxed">
+                {content.hero.description}
+              </p>
+              
+              <div class="pt-4">
+                <ButtonIXSY 
+                  text="Más información" 
+                  href="/ixsy/ixsy" 
+                  size={'lg'}
+                >
+                Más información
+                </ButtonIXSY>
+              </div>
+            </div>
+            
+            <!-- Columna de imagen -->
+            <div class="relative">
+              <div class="absolute -inset-4 blur-3xl rounded-full"></div>
+              <img 
+                src="/network_world.svg" 
+                alt="IXSY Network"
+                class="relative w-full max-w-lg mx-auto drop-shadow-2xl" 
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- IXSY Section con CARRUSEL -->
+      <section class="relative py-12">
+        <!-- Overlay oscuro para mejorar legibilidad -->
+        
+        <div class="relative z-10 container mx-auto px-4">
+          <div class="text-center mb-10">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                {content.ixsy.title}
+              </h2>
+              <p class="text-xl text-teal-400 font-medium mb-6">
+                {content.ixsy.subtitle}
+              </p>
+          </div>
           
-          <div class="mt-8">
-            <CTAButton text="Más información" href="/ixsy_ixe" />
+          <!-- Grid de dos columnas -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <!-- Columna izquierda - Texto e información -->
+            <div class="space-y-6 text-white">
+              <p class="text-lg text-gray-300 leading-relaxed">
+                {content.ixsy.description}
+              </p>
+              
+              <div class="pt-4">
+                <ButtonIXSY 
+                  text="MÁS INFORMACIÓN" 
+                  href="/ixsy/ixsy" 
+                >
+                  MÁS INFORMACIÓN
+                </ButtonIXSY>
+              </div>
+            </div>
+            
+            <!-- Columna derecha - Carrusel -->
+            <div class="relative">
+              <Carrucel
+                images={content.ixsy.images} 
+                autoplayInterval={5000}
+                showThumbnails={true}
+                client:load
+              />
+            </div>
           </div>
         </div>
-        
-        <div class="hidden md:block">
-          <img src="/network_world.svg" class="w-full max-w-md mx-auto" />
-        </div>
-      </div>
-    </div>
-    
-    <!-- IXSY Section -->
-         <div class="bg-black bg-opacity-70 py-16">
-      <div class="container mx-auto px-4">
-        <h1 class="text-3xl font-bold mb-8 text-center">
-          {content.ixsy.title}
-        </h1>
-        <h2 class="text-center">
-          {content.ixsy.sub_title}
-        </h2>
-        <p class="text-gray-300 max-w-2xl mb-8 text-center">
-        {content.ixsy.description}
-        </p>
-        
-        <div class="mt-12">
-          <img src="/ixsy_google.jpg" class="w-full max-w-3xl mx-auto rounded-lg shadow-xl" />
-        </div>
-        
-        <div class="flex justify-center mt-8">
-          <div class="flex space-x-2">
-            <span class="h-2 w-2 rounded-full bg-white"></span>
-            <span class="h-2 w-2 rounded-full bg-gray-600"></span>
-            <span class="h-2 w-2 rounded-full bg-gray-600"></span>
-          </div>
-        </div>
-      </div>
-    </div>
+      </section>
 
+      <!-- IXSY Fellows Section con CARRUSEL -->
+      <section class="relative py-12">
+        <!-- Overlay oscuro para mejorar legibilidad -->
 
-    <!-- IXSY Fellows Section -->
-    <div class="bg-black bg-opacity-70 py-16">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold mb-8">IXSY Fellows</h2>
-        <p class="text-gray-300 max-w-2xl mb-8">
-          "Contribuimos al futuro digital de nuestra Península de México impulsando el intercambio y desarrollo de tecnología de internet"
-        </p>
-        
-        <div class="mt-12">
-          <img src="/images/fellows-photo.jpg" alt="IXSY Fellows" class="w-full max-w-3xl mx-auto rounded-lg shadow-xl" />
+        <div class="relative z-10 container mx-auto px-4">
+          <!-- Encabezado de sección -->
+          <div class="mb-10">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 text-center">
+              {content.fellows.title}
+            </h2>
+            <p class="text-lg text-gray-300 max-w-3xl leading-relaxed text-center mx-auto">
+              "{content.fellows.description}"
+            </p>
+          </div>
+          
+          <!-- CARRUSEL FELLOWS -->
+            <Carrucel
+              images={content.fellows.images} 
+              autoplayInterval={5000}
+              showThumbnails={true}
+              client:load
+            />
         </div>
+      </section>
+      
+      <!-- EVENT SECTION -->
+      <section class="relative py-12 pb-20">
+        <!-- Overlay oscuro para mejorar legibilidad -->
+
+        <div class="relative z-10 container mx-auto px-4">
+          <!-- Encabezado de sección -->
+          <div class="mb-10">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 text-center">
+              {content.event.title}
+            </h2>
+          </div>
         
-        <div class="flex justify-center mt-8">
-          <div class="flex space-x-2">
-            <span class="h-2 w-2 rounded-full bg-white"></span>
-            <span class="h-2 w-2 rounded-full bg-gray-600"></span>
-            <span class="h-2 w-2 rounded-full bg-gray-600"></span>
+          <!-- Imagen con efecto hover -->
+          <div class="max-w-2x1 mx-auto">
+            <div class="relative group max-w-sm mx-auto">
+              <img 
+                src={content.event.imagen}
+                alt="IXSY Meeting 2025"
+                class="relative w-full max-w-sm mx-auto rounded-lg shadow-2xl transform transition-transform duration-300 group-hover:scale-[1.05]"
+              />
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
+      </section>
+
+      <!-- Formulario de Contacto -->
+      <ContactForm client:load />
 </Layout>
+
+<style>
+  /* Animaciones suaves para elementos que aparecen en scroll */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Aplicar animación a secciones cuando sean visibles */
+  section > div {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  /* Responsivo para el carrusel */
+  @media (max-width: 768px) {
+    .h-80 {
+      height: 250px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .h-80 {
+      height: 200px;
+    }
+  }
+</style>

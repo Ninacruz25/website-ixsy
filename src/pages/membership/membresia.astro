@@ -1,0 +1,282 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CardMembership from '../../components/Card/CardMembership';
+import CardRequirement from '../../components/Card/CardRequirement';
+import CardProcess from '../../components/Card/CardProcess';
+import CardService from '../../components/Card/CardService';
+
+const content = {
+  title: "IXSY - Membresía",
+  hero: {
+    title: "SERVICIOS",
+    subtitle: "Membresía"
+  },
+  planes: [
+    {
+      id: "small",
+      name: "SMALL",
+      price: "??",
+      period: "Anual",
+      features: [
+        "Puerto XGE",
+        "Acceso a coubik de contenido de redes sociales",
+        "Acceso a coubik de contenido de series y películas",
+        "Rutas server",
+        "Soporte IPv6"
+      ],
+      highlighted: false,
+      // ctaText: "COMPRAR",
+      ctaLink: "/contact"
+    },
+    {
+      id: "medium",
+      name: "MEDIUM",
+      price: "$9,500.00",
+      period: "Anual",
+      features: [
+        "Puerto 10GB, 20GB, 30GB, 40GB",
+        "Acceso a coubik de contenido de redes sociales",
+        "Acceso a coubik de contenido de series y películas",
+        "Rutas server",
+        "Soporte IPv6"
+      ],
+      highlighted: true,
+      // ctaText: "COMPRAR",
+      ctaLink: "/contact"
+    },
+    {
+      id: "large",
+      name: "LARGE",
+      price: "$19,000.00",
+      period: "Anual",
+      features: [
+        "Puerto 100GB",
+        "Capacidad para de contenido de redes sociales",
+        "Acceso a coubik de contenido de series y películas",
+        "Rutas server",
+        "Soporte IPv6"
+      ],
+      highlighted: false,
+      // ctaText: "COMPRAR",
+      ctaLink: "/contact"
+    },
+    {
+      id: "socio",
+      name: "SOCIO PROVEEDOR",
+      price: "$19,000.00",
+      period: "Anual",
+      features: [
+        "Acceso a eventos como expositor",
+        "Oportunidad de patrocinio",
+        "Acceso a cuentas en convenio de Ascop y capacitacion",
+        "Networking y sinergias con socios"
+      ],
+      highlighted: false,
+      // ctaText: "COMPRAR",
+      ctaLink: "/contact",
+      isSpecial: true
+    }
+  ],
+  servicios: {
+    title: "NUESTROS SERVICIOS",
+    services: [
+      {
+        id: "ixp-manager",
+        name: "IXP Manager",
+        logo: "/servicios/ixp.svg", // Necesitarás agregar este logo 
+        description: "Es una plataforma de administración para puntos de intercambio de Internet (IXP), que incluye gestión de administración completa, gestión gráfica desde mediciones de tráfico de red hasta control de enrutamiento."
+      },
+      {
+        id: "ipv6",
+        name: "IPv6",
+        logo: "/servicios/ipv6.svg", // Necesitarás agregar este logo
+        description: "Certificación de conectividad IPv6 ha permitido la consolidación del IPv6 2023 que se ha vuelto un componente crecimiento de protocolos mejorados para mitigar riesgos de conectividad."
+      },
+      {
+        id: "route-server",
+        name: "Route Server",
+        logo: "/route_server_logo.png", // Usaremos texto estilizado
+        description: "Sirve una alternativa de servicios de una Bird (Berkeley Internet Name Domain) que funciona para cualquier usuario que implemente sus propias medidas de ruta."
+      },
+      {
+        id: "nagios",
+        name: "Nagios",
+        logo: "/nagios_logo.png", // Necesitarás agregar este logo
+        description: "Nagios es un sistema ampliamente utilizado por la industria y es un sistema de monitoreo de red de código abierto que vigila hosts y servicios, alertando a los usuarios cuando las cosas van mal y de nuevo cuando se resuelven."
+      },
+      {
+        id: "rpki",
+        name: "RPKI",
+        logo: "/rpki_logo.png", // Necesitarás agregar este logo
+        description: "Permite al uso Routing de recursos numericos de registros Reglas aplicables para verificar que los BGP pueden originar un prefijo en BGP están registrados para ser originados desde ASN."
+      },
+      {
+        id: "fort",
+        name: "FORT",
+        logo: "/fort_logo.png", // Necesitarás agregar este logo
+        description: "Router FORT Validator para la familia de protocolos de enrutamiento BGP (Border Gateway Protocol). Es un validador que se ejecuta junto con los enrutadores BGP para verificar las rutas."
+      },
+      {
+        id: "manrs",
+        name: "MANRS",
+        logo: "/manrs_logo.png", // Necesitarías agregar este logo
+        description: "Proporcionan información sobre la seguridad del enrutamiento con datos sobre protocolos que es información de los miembros que publican en IRR (IRR implementaran en sus propias redes locales."
+      }
+    ]
+  },
+  requisitos: [
+    { number: 1, text: "CONTAR CON NÚMERO DE SISTEMA AUTÓNOMO (ASN)" },  
+    { number: 2, text: "CONTAR CON TRANSPORTE HASTA EL IXP" },  
+    { number: 3, text: "SOLICITAR A APTELEKOM O RH EL SITE MAYA O LA CROSS" },  
+    { number: 4, text: "SEGUIR EL PROCESO PARA CONVERTIRSE EN ASOCIADO" },
+  ],
+  proceso: [
+    { number: 1, text: "PRESENTAR UNA CARTA DE INTENCIÓN PARA PARTICIPACIÓN DEL CONSEJO DIRECTIVO" },  
+    { number: 2, text: "ESPERAR LA APROBACIÓN DE LA PROPUESTA DE PARTICIPACIÓN" },  
+    { number: 3, text: "FIRMAR EL CONVENIO DE ADHESIÓN TRAS LA NOTIFICACIÓN DE APROBACIÓN" },  
+    { number: 4, text: "ACEPTAR LAS POLÍTICAS DE PEERING Y ROUTE SERVER DE IXSY" },  
+    { number: 5, text: "ESTABLECER LA CONEXIÓN DE TRANSPORTE A IXSY" },  
+    { number: 6, text: "CONFIGURAR UNA SESIÓN DE BGP CON LOS ROUTE SERVERS DEL IXP EN UNA VLAN ESPECÍFICA O UNA SESIÓN IP" },  
+    { number: 7, text: "REGISTRARSE EN PEERINGDB" },  
+    { number: 8, text: "IMPLEMENTAR FILTROS PARA EVITAR ROUTE LEAKS" },  
+    { number: 9, text: "REALIZAR EL PAGO MENSUAL POR EL USO DEL PUERTO DE 10GBPS O 100GBPS" },  
+    { number: 10, text: "PAGAR LA MEMBRESÍA ANUAL" },  
+    { number: 11, text: "PARTICIPAR EN MANRS BAJO EL PROGRAMA DE OPERADORES DE RED" }  
+  ],
+  
+};
+---
+
+<Layout title={content.title}>
+  <!-- Contenedor principal con fondo único -->
+  <div 
+    class="min-h-screen bg-cover bg-center"
+    style="background-image: url('/IXSY.svg');"
+  >
+    <!-- Hero Section -->
+    <section class="relative py-20 pt-32">
+      <!-- Overlay oscuro para mejorar legibilidad -->
+      <div class="absolute inset-0 bg-black/50 z-5"></div>
+      <div class="relative z-10 container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">
+            {content.hero.title}
+          </h1>
+          <h2 class="text-3xl md:text-4xl font-bold text-teal-400">
+            {content.hero.subtitle}
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Planes de Membresía -->
+    <section class="relative py-12 pb-20">  
+      <div class="absolute inset-0 bg-black/50 z-5"></div>  
+      <div class="relative z-10 container mx-auto px-4">  
+          
+        <!-- Grid principal de 3 columnas para los primeros planes -->  
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-12">  
+          {content.planes.slice(0, 3).map((plan) => (  
+            <CardMembership client:load plan={plan} />  
+          ))}  
+        </div>  
+  
+        <!-- Plan Socio Proveedor - Centrado y especial -->  
+        <div class="flex justify-center">  
+          <div class="max-w-md w-full">  
+            <CardMembership client:load plan={content.planes[3]} />  
+          </div>  
+        </div>  
+      </div>  
+    </section>
+
+    <!-- Sección Requisitos para la Membresía -->
+    <section class="relative py-16">  
+      <div class="absolute inset-0 bg-black/50 z-5"></div>  
+      <div class="relative z-10 container mx-auto px-4">  
+          
+        <div class="text-center mb-16">  
+          <p class="text-xl text-gray-300 font-medium mb-4">  
+            REQUISITOS  
+          </p>  
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">  
+            Requisitos para la membresía  
+          </h2>  
+        </div>  
+      
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">  
+          {content.requisitos.map((req) => (  
+            <CardRequirement client:load requirement={req} />  
+          ))}  
+        </div>  
+      </div>  
+    </section>
+
+    <!-- Sección Proceso de Membresía -->
+    <section class="relative py-16">  
+      <div class="absolute inset-0 bg-black/50 z-5"></div>  
+      <div class="relative z-10 container mx-auto px-4">  
+          
+        <div class="text-center mb-16">  
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">  
+            Proceso de membresía  
+          </h2>  
+        </div>  
+      
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">  
+          {content.proceso.map((step) => (  
+            <CardProcess client:load step={step} />  
+          ))}  
+        </div>  
+      </div>  
+    </section>
+
+    <!-- Sección Nuestros Servicios -->
+    <section class="relative py-16">
+      <div class="absolute inset-0 bg-black/50 z-5"></div>
+      <div class="relative z-10 container mx-auto px-4">
+        
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+            {content.servicios.title}
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {content.servicios.services.map((service, index) => (
+            <div class={index === content.servicios.services.length - 1 ? "md:col-span-2 lg:col-span-3 flex justify-center" : ""}>
+              <CardService 
+                client:load 
+                service={service} 
+                className={index === content.servicios.services.length - 1 ? "max-w-md" : ""}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  /* Animaciones suaves */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  section > div {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  /* Efectos adicionales para las cards */
+  .group:hover .group-hover\:scale-110 {
+    transform: scale(1.1);
+  }
+</style>

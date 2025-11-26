@@ -1,0 +1,172 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CarrucelCommunity from '../../components/Carrucel/CarrucelCommunity';
+
+const content = {
+  title: "IXSY - Comunidad",
+  miembros: {
+    title: "COMUNIDAD",
+    subtitle: "Miembros",
+    images: [
+      { src: "/miembros/gobierno.svg", alt: "Gobierno" },
+      { src: "/miembros/DYRNET.svg", alt: "Dyrnet" },
+      { src: "/miembros/QUATTROCOM.svg", alt: "Quattrocom" },
+      { src: "/miembros/AYUNTAMIENTO.svg", alt: "Ayuntamiento" },
+      { src: "/miembros/TOTALPLAY.svg", alt: "Totalplay" },
+      { src: "/miembros/CONECTIKAN.svg", alt: "Conectikan" },
+      { src: "/miembros/RAM.svg", alt: "RAM" },
+      { src: "/miembros/AITELECOM.svg", alt: "Aitelecom" },
+      { src: "/miembros/TRUXGO.svg", alt: "Truxgo" },
+      { src: "/miembros/MAYACON.svg", alt: "Mayacon" },
+      { src: "/miembros/BIGNET.svg", alt: "MBignet" },
+      { src: "/miembros/TECDEMERIDA.svg", alt: "Tec" }
+    ]
+  },
+  alianzas: {
+    title: "Alianzas",
+    subtitle: "Nacionales e Internacionales",
+    images: [
+      { src: "/alianzas/lacninc.svg", alt: "LACNIC" },
+      { src: "/alianzas/lac-ix.svg", alt: "LAC-IX" },
+      { src: "/alianzas/icann.png", alt: "ICANN" },
+      { src: "/alianzas/28.svg", alt: "ANUIES" },
+      { src: "/alianzas/LASDIGITAL.svg", alt: "LACDIGITAL" },
+      { src: "/alianzas/tecsw.svg", alt: "TecSw" },
+      { src: "/alianzas/mtp.png", alt: "MTP" },
+      { src: "/alianzas/nic_mexico.svg", alt: "nicmex" },
+      { src: "/alianzas/lacnog.svg", alt: "lacnog" },
+      { src: "/alianzas/EFTS.svg", alt: "EFTS" },
+      { src: "/alianzas/nix.svg", alt: "nix" },
+      { src: "/alianzas/amcs.svg", alt: "amcs" }
+    ]
+  }
+};
+---
+
+<Layout title={content.title}>
+  <!-- Alpine.js -->
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+  <!-- Contenedor principal con fondo único -->
+  <div 
+    class="min-h-screen bg-cover bg-center relative"
+    style="background-image: url('/IXSY.svg');"
+  >
+    <!-- Fondo con líneas vectoriales animadas -->
+    <div class="absolute inset-0 overflow-hidden z-0">
+      <svg class="absolute top-0 left-0 w-1/3 h-full opacity-15" viewBox="0 0 400 800">
+        <defs>
+          <linearGradient id="lineGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#14b8a6;stop-opacity:0.8" />
+            <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:0.3" />
+          </linearGradient>
+        </defs>
+        <path d="M0,100 Q100,200 200,150 T400,200 L400,300 Q300,350 200,300 T0,350" 
+              stroke="url(#lineGradient1)" 
+              stroke-width="2" 
+              fill="none">
+          <animate attributeName="stroke-dasharray" 
+                   values="0,1500;1500,0;0,1500" 
+                   dur="12s" 
+                   repeatCount="indefinite"/>
+        </path>
+      </svg>
+      
+      <svg class="absolute bottom-0 right-0 w-1/2 h-2/3 opacity-15" viewBox="0 0 400 600">
+        <path d="M400,600 Q300,500 200,550 T0,500 L0,400 Q100,350 200,400 T400,350" 
+              stroke="url(#lineGradient1)" 
+              stroke-width="2" 
+              fill="none">
+          <animate attributeName="stroke-dasharray" 
+                   values="1500,0;0,1500;1500,0" 
+                   dur="10s" 
+                   repeatCount="indefinite"/>
+        </path>
+      </svg>
+    </div>
+
+    <!-- Overlay oscuro -->
+    <div class="absolute inset-0 bg-black/60 z-5"></div>
+    
+    <!-- Contenido principal -->
+    <div class="relative z-10 py-20 pt-32">
+      
+      <!-- Sección Miembros -->
+      <section class="container mx-auto px-4 mb-20">
+        <!-- Header -->
+        <div class="text-center mb-12">
+          <p class="text-teal-400 font-semibold text-lg mb-2">
+            {content.miembros.title}
+          </p>
+          <h1 class="text-4xl md:text-5xl font-bold text-white mb-8">
+            {content.miembros.subtitle}
+          </h1>
+        </div>
+
+        <!-- Carrusel de Miembros Mejorado -->
+        <div class="max-w-6xl mx-auto">
+          <CarrucelCommunity
+            images={content.miembros.images}
+            autoplayInterval={3000}
+            showThumbnails={true}
+            visibleSlidesConfig={{ mobile: 1, tablet: 2, desktop: 3, large: 4 }}
+            client:load
+          />
+        </div>
+      </section>
+
+      <!-- Sección Alianzas -->
+      <section class="container mx-auto px-4">
+        <!-- Header -->
+        <div class="text-center mb-12">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+            {content.alianzas.title}
+          </h2>
+          <p class="text-lg text-gray-300">
+            {content.alianzas.subtitle}
+          </p>
+        </div>
+
+        <!-- Carrusel de Alianzas Mejorado -->
+        <div class="max-w-6xl mx-auto">
+          <CarrucelCommunity 
+            images={content.alianzas.images}
+            autoplayInterval={3500}
+            showThumbnails={true}
+            visibleSlidesConfig={{ mobile: 1, tablet: 2, desktop: 3, large: 4 }}
+            client:load
+          />
+        </div>
+      </section>
+
+    </div>
+  </div>
+</Layout>
+
+<style>
+  /* Animaciones suaves */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  section {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  /* Ocultar scrollbar en carrusel */
+  .overflow-hidden::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .overflow-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>

@@ -1,0 +1,485 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const content = {
+  title: "IXSY - Fellows",
+  hero: {
+    title: "IXSY FELLOWS", 
+    description: "Formación de Talento Digital Especializado"
+  },
+  program: {
+    description: "IXSY Fellows es un programa integral de formación en ciberseguridad y tecnologías de Internet dirigido a estudiantes universitarios de Yucatán, Campeche y Quintana Roo.",
+    benefits: [
+      "Formación práctica en el Punto de Intercambio de Internet (IXP) de Yucatán",
+      "Desarrollo de competencias en innovación digital y ciberseguridad", 
+      "Colaboración directa con expertos del ecosistema digital regional",
+      "Preparación profesional para roles estratégicos en el sector tecnológico"
+    ]
+  },
+  objectives: [
+    {
+      title: "Desarrollar competencias necesarias",
+      description: "Formar jóvenes universitarios para liderar la transformación digital en la región, atendiendo las demandas del sector digital en ciberseguridad y tecnologías de Internet."
+    },
+    {
+      title: "Fortalecer el ecosistema digital",
+      description: "Fomentar una cultura de innovación, emprendimiento digital e investigación en Internet a través de proyectos de vanguardia y colaboración con comunidades nacionales e internacionales."
+    },
+    {
+      title: "Posicionar a Yucatán",
+      description: "Establecer a Yucatán como un referente en la formación de talento digital a nivel nacional e internacional."
+    }
+  ],
+  requirements: [
+    "Estudiante universitario de carreras afines a TI, Derecho, Humanidades o Administración",
+    "Residente en la Península de Yucatán",
+    "Disponibilidad de 20 horas semanales",
+    "Nivel de inglés A2-B1",
+    "Interés genuino en tecnologías de Internet y ciberseguridad"
+  ],
+  timeline: [
+    {
+      activity: "Registro",
+      date: "Hasta el 14 de febrero de 2025"
+    },
+    {
+      activity: "Entrevistas", 
+      date: "5 al 18 de febrero"
+    },
+    {
+      activity: "Resultados",
+      date: "24 de febrero"
+    },
+    {
+      activity: "Inicio del Programa",
+      date: "3 de marzo de 2025"
+    },
+    {
+      activity: "Fin del Programa",
+      date: "15 de noviembre 2025"
+    }
+  ],
+  partners: [
+    "Internet Society",
+    "Google Cloud Security", 
+    "Gobierno de Yucatán",
+    "Universidad Politécnica de Yucatán",
+    "CANIETI Sureste",
+    "AMCID"
+  ]
+};
+---
+
+<Layout title={content.title}>
+  <!-- Alpine.js -->
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  
+  <!-- Contenedor principal con fondo único -->
+  <div 
+    class="min-h-screen bg-cover bg-center"
+    style="background-image: url('/IXSY.svg');"
+    x-data="{
+      activeYear: 'overview',
+      setActiveYear(year) {
+        this.activeYear = year;
+      }
+    }"
+  >
+    <!-- Hero Section -->
+    <section class="relative py-20 pt-32">
+      <!-- Overlay oscuro para mejorar legibilidad -->
+      <div class="absolute inset-0 bg-black/50 z-5"></div>
+      <div class="relative z-10 container mx-auto px-4">
+        <div class="text-center mb-4">
+          <h1 
+            @click="setActiveYear('overview')"
+            class="text-4xl md:text-6xl font-bold text-white mb-4 cursor-pointer hover:text-teal-400 transition-colors duration-300"
+          >
+            {content.hero.title}
+          </h1>
+          
+          <!-- Pestañas de años -->
+          <div class="mb-4">
+            <!-- Navegación de años -->
+            <div class="flex justify-center mb-6">
+              <div class="inline-flex bg-white/20 backdrop-blur-md rounded-full p-2">
+                <button 
+                  @click="setActiveYear('2025')"
+                  :class="activeYear === '2025' ? 'bg-teal-500 text-white' : 'text-gray-300 hover:text-white hover:bg-gray-700/50'"
+                  class="px-6 py-2 rounded-full text-sm font-medium transition-all duration-300"
+                >
+                  2025
+                </button>
+                <button 
+                  @click="setActiveYear('2024')"
+                  :class="activeYear === '2024' ? 'bg-teal-500 text-white' : 'text-gray-300 hover:text-white hover:bg-gray-700/50'"
+                  class="px-6 py-2 rounded-full text-sm font-medium transition-all duration-300"
+                >
+                  2024
+                </button>
+                <button 
+                  @click="setActiveYear('2023')"
+                  :class="activeYear === '2023' ? 'bg-teal-500 text-white' : 'text-gray-300 hover:text-white hover:bg-gray-700/50'"
+                  class="px-6 py-2 rounded-full text-sm font-medium transition-all duration-300"
+                >
+                  2023
+                </button>
+              </div>
+            </div>
+
+            <!-- Contenido dinámico por año -->
+            <div class="text-center">
+              <!-- Vista Overview/General -->
+              <div x-show="activeYear === 'overview'" x-transition>
+                <h3 class="text-2xl md:text-3xl font-bold text-white ">
+                  {content.hero.description}
+                </h3>
+              </div>
+              
+              <!-- Vista 2025 -->
+              <div x-show="activeYear === '2025'" x-transition>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                  IXSY FELLOWS 2025
+                </h2>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6">
+                  <a 
+                    href="https://drive.google.com/file/d/1x74wZCCJQw2yZ3X1_Xcuz-WncSxy24Yb/view" 
+                    target="_blank"
+                    class="bg-teal-500 hover:bg-teal-600 text-white px-8 py-3 rounded-full font-bold transition-all duration-300 transform hover:scale-105"
+                  >
+                    SELECCIONADOS
+                  </a>
+                  <a 
+                    href="https://drive.google.com/file/d/1JGDw8PKgMsSw3BmK_hKf98BuNvaiMdFc/view" 
+                    target="_blank"
+                    class="bg-transparent border-2 border-teal-500 text-teal-400 hover:bg-teal-500 hover:text-white px-8 py-3 rounded-full font-bold transition-all duration-300 transform hover:scale-105"
+                  >
+                    CONVOCATORIA
+                  </a>
+                </div>
+              </div>
+              
+              <!-- Vista 2024 -->
+              <div x-show="activeYear === '2024'" x-transition>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                  IXSY FELLOWS 2024
+                </h2>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6">
+                  <a 
+                    href="https://img1.wsimg.com/blobby/go/76ec4aed-c739-43df-97c0-1886adc9ab12/2040206_SELECCIONADOS_IXSY_FELLOWS_202-d526e4a.pdf"
+                    class="bg-teal-500 hover:bg-teal-600 text-white px-8 py-3 rounded-full font-bold transition-all duration-300 transform hover:scale-105"
+                  >
+                    SELECCIONADOS
+                  </a>
+                  <a 
+                    href="https://img1.wsimg.com/blobby/go/76ec4aed-c739-43df-97c0-1886adc9ab12/20240124_Convocatoria_IXSY_Mexico.docx.pdf"
+                    class="bg-transparent border-2 border-teal-500 text-teal-400 hover:bg-teal-500 hover:text-white px-8 py-3 rounded-full font-bold transition-all duration-300 transform hover:scale-105"
+                  >
+                    CONVOCATORIA
+                  </a>
+                </div>
+              </div>
+              
+              <!-- Vista 2023 -->
+              <div x-show="activeYear === '2023'" x-transition>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                  IXSY FELLOWS 2023
+                </h2>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6">
+                  <a 
+                    href=""
+                    class="bg-teal-500 hover:bg-teal-600 text-white px-8 py-3 rounded-full font-bold transition-all duration-300 transform hover:scale-105"
+                  >
+                    SELECCIONADOS
+                  </a>
+                  <a 
+                    href=""
+                    class="bg-transparent border-2 border-teal-500 text-teal-400 hover:bg-teal-500 hover:text-white px-8 py-3 rounded-full font-bold transition-all duration-300 transform hover:scale-105"
+                  >
+                    CONVOCATORIA
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Descripción del Programa - Solo visible en vista overview -->
+    <section x-show="activeYear === 'overview'" x-transition class="relative py-1">
+      <div class="absolute inset-0 bg-black/50 z-5"></div>
+      <div class="relative z-10 container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center mb-16">
+          <p class="text-lg text-gray-300 leading-relaxed mb-8">
+            {content.program.description}
+          </p>
+          
+          <!-- Placeholder para imagen -->
+          <div class="rounded-lg flex items-center justify-center mb-12" style="min-height: 90px; object-fit: cover;">
+            <img src="/fellows/fellow_ixsy.svg" alt="Ixsy Fellows">
+          </div>
+        </div>
+        
+        <!-- ¿Qué obtendrás? -->
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-12">
+            ¿Qué obtendrás?
+          </h2>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {content.program.benefits.map((benefit) => (
+              <div class="bg-gray-800/70 backdrop-blur-lg rounded-lg p-6 border border-gray-700/50 hover:border-teal-500/50 transition-all duration-300">
+                <div class="flex items-start">
+                  <svg class="w-6 h-6 text-teal-400 mt-1 mr-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-300 leading-relaxed">
+                    {benefit}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Objetivos - Solo visible en vista overview -->
+    <section x-show="activeYear === 'overview'" x-transition class="relative py-16">
+      <div class="absolute inset-0 bg-black/50 z-5"></div>
+      <div class="relative z-10 container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+            Objetivos
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {content.objectives.map((objective, index) => (
+            <div class="bg-gray-800/70 backdrop-blur-lg rounded-lg p-8 border border-gray-700/50 hover:border-teal-500/50 transition-all duration-300 hover:transform hover:scale-105">
+              <div class="text-center mb-6">
+                <div class="bg-teal-500 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span class="text-white font-bold text-xl">{index + 1}</span>
+                </div>
+                <h3 class="text-xl font-bold text-teal-400 mb-4">
+                  {objective.title}
+                </h3>
+              </div>
+              <p class="text-gray-300 text-sm leading-relaxed text-center">
+                {objective.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Requisitos - Solo visible en vista overview -->
+    <section x-show="activeYear === 'overview'" x-transition class="relative py-16">
+      <div class="absolute inset-0 bg-black/50 z-5"></div>
+      <div class="relative z-10 container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+            Requisitos principales
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {content.requirements.map((requirement, index) => (
+            <div class="bg-gray-800/70 backdrop-blur-lg rounded-lg p-6 border border-gray-700/50 hover:border-teal-500/50 transition-all duration-300">
+              <div class="flex items-start">
+                <span class="text-teal-400 font-bold text-lg mr-3 mt-1">{index + 1}.</span>
+                <span class="text-gray-300 text-sm leading-relaxed">
+                  {requirement}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Carousel de Imágenes - Solo visible en vista overview -->
+    <section x-show="activeYear === 'overview'" x-transition class="relative py-16">
+      <div class="absolute inset-0 bg-black/50 z-5"></div>
+      <div class="relative z-10 container mx-auto px-4">
+        <div class="text-center mb-16">
+          <p class="text-lg text-gray-300 mb-8">
+            Transforma tu futuro profesional siendo parte de la próxima generación de especialistas digitales de la región.
+          </p>
+          
+          <!-- Carousel de imágenes -->
+          <!-- Carousel de imágenes -->
+          <div class="max-w-6xl mx-auto">
+            <div 
+              x-data="{
+                active: 0,
+                autoplay: null,
+                images: [
+                  { src: '/fellows/gallery-1.jpg'},
+                  { src: '/fellows/gallery-2.jpg'},
+                  { src: '/fellows/gallery-3.jpg'},
+                  { src: '/fellows/gallery-4.jpg'},
+                  { src: '/fellows/gallery-5.jpg'},
+                  { src: '/fellows/gallery-6.jpg'}
+                ],
+                getVisibleSlides() {
+                  return window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+                },
+                visibleSlides: 3,
+                maxIndex() {
+                  return Math.max(0, this.images.length - this.visibleSlides);
+                },
+                startAutoplay() {
+                  this.autoplay = setInterval(() => {
+                    if (this.active >= this.maxIndex()) {
+                      this.active = 0;
+                    } else {
+                      this.active++;
+                    }
+                  }, 4000);
+                },
+                stopAutoplay() {
+                  if (this.autoplay) {
+                    clearInterval(this.autoplay);
+                  }
+                },
+                goToSlide(index) {
+                  this.active = Math.max(0, Math.min(index, this.maxIndex()));
+                  this.stopAutoplay();
+                  setTimeout(() => this.startAutoplay(), 3000);
+                },
+                next() {
+                  if (this.active < this.maxIndex()) {
+                    this.active++;
+                  } else {
+                    this.active = 0;
+                  }
+                },
+                prev() {
+                  if (this.active > 0) {
+                    this.active--;
+                  } else {
+                    this.active = this.maxIndex();
+                  }
+                }
+              }"
+              x-init="
+                visibleSlides = getVisibleSlides();
+                startAutoplay();
+                window.addEventListener('resize', () => {
+                  visibleSlides = getVisibleSlides();
+                });
+              "
+              @mouseenter="stopAutoplay()"
+              @mouseleave="startAutoplay()"
+              class="relative"
+            >
+              <!-- Botones de navegación -->
+              <button 
+                @click="prev(); stopAutoplay(); setTimeout(() => startAutoplay(), 3000);"
+                class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-teal-500/80 hover:bg-teal-500 text-white rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110"
+                :disabled="active === 0"
+                :class="active === 0 ? 'opacity-50 cursor-not-allowed' : ''"
+              >
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+              </button>
+
+              <button 
+                @click="next(); stopAutoplay(); setTimeout(() => startAutoplay(), 3000);"
+                class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-teal-500/80 hover:bg-teal-500 text-white rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110"
+                :disabled="active === maxIndex()"
+                :class="active === maxIndex() ? 'opacity-50 cursor-not-allowed' : ''"
+              >
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
+
+              <!-- Container del carrusel -->
+              <div class="overflow-hidden rounded-2xl bg-white/10 backdrop-blur-sm p-8 mx-12">
+                <div 
+                  class="flex transition-transform duration-500 ease-in-out"
+                  :style="`transform: translateX(-${active * (100 / visibleSlides)}%); gap: 1.5rem;`"
+                >
+                  <template x-for="(image, index) in images" :key="index">
+                    <div 
+                      class="flex-shrink-0 bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer border border-gray-700 group overflow-hidden"
+                      :style="`width: calc(${100 / visibleSlides}% - 1.125rem);`"
+                      @click="goToSlide(Math.max(0, Math.min(index - Math.floor(visibleSlides/2), maxIndex())))"
+                    >
+                      <!-- Contenedor de imagen con altura fija -->
+                      <div class="relative h-64 overflow-hidden">
+                        <img 
+                          :src="image.src" 
+                          :alt="image.alt"
+                          class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300 transform group-hover:scale-110"
+                          loading="lazy"
+                          @error="$el.src = '/fellows/placeholder.jpg'"
+                        />
+                        <!-- Overlay con efecto hover -->
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-all duration-300"></div>
+                      </div>
+                      <!-- Título -->
+                      <div class="p-4">
+                        <p class="text-center text-sm font-medium text-gray-300 group-hover:text-teal-400 transition-colors" x-text="image.alt"></p>
+                      </div>
+                    </div>
+                  </template>
+                </div>
+              </div>
+              
+              <!-- Indicadores mejorados -->
+              <div class="flex justify-center mt-6 space-x-2">
+                <template x-for="i in Math.ceil(images.length / visibleSlides)" :key="i">
+                  <button 
+                    @click="goToSlide((i-1)); stopAutoplay(); setTimeout(() => startAutoplay(), 3000);"
+                    :class="Math.floor(active / visibleSlides) === (i-1) ? 'bg-teal-500 w-8' : 'bg-gray-600 w-3 hover:bg-gray-400'"
+                    class="h-3 rounded-full transition-all duration-300"
+                  ></button>
+                </template>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="text-center">
+          <a 
+            href="https://ixsy.org.mx/convocatoria-2025-1"
+            target="_blank"
+            class="inline-block bg-teal-500 hover:bg-teal-600 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 text-lg"
+          >
+            APLICAR AHORA
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  /* Animaciones suaves */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  section > div {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  /* Efectos adicionales para las cards */
+  .group:hover .group-hover\:scale-110 {
+    transform: scale(1.1);
+  }
+</style>

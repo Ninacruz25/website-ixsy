@@ -1,0 +1,57 @@
+---
+// backgroundLines.astro
+---
+
+<div class="background-container">
+  <div class="cursor-glow" id="cursor-glow"></div>
+</div>
+
+<script>
+  console.log('🟢 Iniciando efecto de cursor...');
+  
+  const cursorGlow = document.getElementById('cursor-glow');
+  
+  if (cursorGlow) {
+    console.log('✅ Elemento cursor-glow encontrado');
+    
+    document.addEventListener('mousemove', (e) => {
+      cursorGlow.style.left = `${e.clientX}px`;
+      cursorGlow.style.top = `${e.clientY}px`;
+    });
+    
+    console.log('✅ Event listener del cursor activado');
+  } else {
+    console.error('❌ No se encontró cursor-glow');
+  }
+</script>
+
+<style>
+  .background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: #000000;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  
+  .cursor-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    margin-left: -300px;
+    margin-top: -300px;
+    background: radial-gradient(
+      circle,
+      rgba(0, 230, 211, 1) 0%,
+      rgba(0, 230, 211, 0.6) 20%,
+      rgba(0, 230, 211, 0.3) 40%,
+      transparent 70%
+    );
+    filter: blur(40px);
+    pointer-events: none;
+  }
+</style>
