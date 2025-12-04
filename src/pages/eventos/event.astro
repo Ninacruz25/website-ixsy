@@ -1,42 +1,45 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import ButtonIXSY from '../../components/ButtonIXSY/ButtonIXSY'
+import Layout from "../../layouts/Layout.astro";
+import ButtonIXSY from "../../components/ButtonIXSY/ButtonIXSY";
 
 export interface Props {
   text: string;
   href: string;
-  color?: 'primary' | 'secondary';
+  color?: "primary" | "secondary";
 }
-const {text, href, color = 'primary'} = Astro.props;
+const { text, href, color = "primary" } = Astro.props;
 
 const content = {
   title: "IXSY - Eventos",
   eventos: {
     title: "EVENTOS",
     subtitle: "Eventos 2022 - 2025",
-    description: "El IXSY Meeting es el evento anual que conecta a los líderes y expertos del ecosistema de Internet en un espacio único dedicado al peering, la conectividad, la ciberseguridad y la innovación digital. El evento es el punto de encuentro de las principales empresas de telecomunicaciones, operadores nacionales e internacionales, proveedores de redes de contenido y nube, centros de datos, cables submarinos, carriers, ISP y WISP; así como a los tomadores de decisiones de la redes de gobiernos, universidades y de empresas.",
+    description:
+      "El IXSY Meeting es el evento anual que conecta a los líderes y expertos del ecosistema de Internet en un espacio único dedicado al peering, la conectividad, la ciberseguridad y la innovación digital. El evento es el punto de encuentro de las principales empresas de telecomunicaciones, operadores nacionales e internacionales, proveedores de redes de contenido y nube, centros de datos, cables submarinos, carriers, ISP y WISP; así como a los tomadores de decisiones de la redes de gobiernos, universidades y de empresas.",
     eventList: [
       {
         id: 1,
         year: "2025",
         title: "IXSY MEETING 2025",
         image: "/25.svg",
-        description: "El IXSY Meeting es el evento anual que conecta a los líderes y expertos del ecosistema de Internet en un espacio único dedicado al peering, la conectividad, la ciberseguridad y la innovación digital.  El evento es el punto de encuentro de las principales empresas de telecomunicaciones, operadores nacionales e internacionales, proveedores de redes de contenido y nube, centros de datos, cables submarinos, carriers, ISP y WISP; así como a los tomadores de decisiones de la redes de gobiernos, universidades y de empresas.",
+        description:
+          "El IXSY Meeting es el evento anual que conecta a los líderes y expertos del ecosistema de Internet en un espacio único dedicado al peering, la conectividad, la ciberseguridad y la innovación digital.  El evento es el punto de encuentro de las principales empresas de telecomunicaciones, operadores nacionales e internacionales, proveedores de redes de contenido y nube, centros de datos, cables submarinos, carriers, ISP y WISP; así como a los tomadores de decisiones de la redes de gobiernos, universidades y de empresas.",
         date: "9 Y 10 DE ABRIL",
         location: "CENTRO DE CONVENCIONES SIGLO XXI",
         featured: true,
-        sponsors: ["Mexico Connect", "LACNIC", "WISP"]
+        sponsors: ["Mexico Connect", "LACNIC", "WISP"],
       },
       {
         id: 2,
         year: "2024",
         title: "IXSY MEETING 2024",
         image: "/24.svg",
-        description: "IXSY Meeting es el evento que reúne a los profesionales y expertos del ecosistema de Internet en México y el mundo. En este evento se encuentran los actores clave de los sectores de Peering, Integradores, Contenido, Conectividad, telecomunicaciones, operadores, redes, nube, centros de datos, ISP y gobiernos. ",
+        description:
+          "IXSY Meeting es el evento que reúne a los profesionales y expertos del ecosistema de Internet en México y el mundo. En este evento se encuentran los actores clave de los sectores de Peering, Integradores, Contenido, Conectividad, telecomunicaciones, operadores, redes, nube, centros de datos, ISP y gobiernos. ",
         date: "9 Y 10 DE ABRIL",
         location: "CENTRO DE CONVENCIONES SIGLO XXI",
         featured: true,
-        sponsors: ["Mexico Connect", "LACNIC", "WISP"]
+        sponsors: ["Mexico Connect", "LACNIC", "WISP"],
       },
       {
         id: 3,
@@ -47,7 +50,7 @@ const content = {
         date: "9 Y 10 DE ABRIL",
         location: "CENTRO DE CONVENCIONES SIGLO XXI",
         featured: true,
-        sponsors: ["Mexico Connect", "LACNIC", "WISP"]
+        sponsors: ["Mexico Connect", "LACNIC", "WISP"],
       },
       {
         id: 4,
@@ -55,116 +58,72 @@ const content = {
         title: "IXSY MEETING 2022",
         image: "/22.svg",
         description: "Primera edición del encuentro IXSY",
-        dimensions: "338 x 338"
-      }
-    ]
-  }
+        dimensions: "338 x 338",
+      },
+    ],
+  },
 };
 ---
 
 <Layout title={content.title}>
   <!-- Alpine.js -->
-  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    defer></script>
 
-  <!-- Contenedor principal con fondo único -->
-  <div 
-    class="min-h-screen bg-cover bg-center"
-    style="background-image: url('/recursos_noticias.svg');"
-  >
-    
-    <!-- Sección de Eventos Principal -->
-    <section class="relative py-20 pt-32">
-      <!-- Overlay oscuro para mejorar legibilidad -->
-      <div class="absolute inset-0 bg-black/50 z-5"></div>
+  <!-- Sección de Eventos Principal (estructura igual que IXSY/Membresía) -->
+  <section class="relative py-20 pt-32">
+    <div class="relative z-10 container mx-auto px-4">
+      <!-- Header de la sección -->
+      <div class="text-center mb-16">
+        <p class="text-teal-400 font-semibold text-lg mb-2">
+          {content.eventos.title}
+        </p>
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-8">
+          {content.eventos.subtitle}
+        </h1>
+        <p class="text-lg text-gray-300 max-w-6xl mx-auto leading-relaxed">
+          {content.eventos.description}
+        </p>
+      </div>
 
-      <!-- Contenido principal -->
-      <div class="relative z-10 container mx-auto px-4">
-        
-        <!-- Header de la sección -->
-        <div class="text-center mb-16">
-            <p class="text-teal-400 font-semibold text-lg mb-2">
-                {content.eventos.title}
-            </p>
-            <h1 class="text-4xl md:text-6xl font-bold text-white mb-8">
-                {content.eventos.subtitle}
-            </h1>
-            <p class="text-lg text-gray-300 max-w-6xl mx-auto leading-relaxed">
-                {content.eventos.description}
-            </p>
-        </div>
-
-        <!-- Grid de eventos -->
-        <div class="space-y-12">
-          
-          <!-- Evento 2025 (Grande - Destacado) -->
-          <div class="relative group">
-            <div class="bg-gradient-to-r from-gray-800/40 to-gray-700/40 rounded-2xl p-6 backdrop-blur-sm border border-gray-600/30 hover:border-teal-400/50 transition-all duration-500">
-              <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                
-                <!-- Imagen del evento -->
-                <div class="relative">
-                  <div class="absolute -inset-2 bg-gradient-to-r  from-gray-500 to-gray-400 border border-red-500/30 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
-                  <img 
-                    src={content.eventos.eventList[0].image}
-                    alt={content.eventos.eventList[0].title}
-                    class="relative w-full rounded-2xl shadow-2xl transform group-hover:scale-105 transition-transform duration-500"
-                    style="min-height: 300px; object-fit: cover;"
-                  />
+      <!-- Grid de eventos -->
+      <div class="space-y-12">
+        <!-- Evento 2025 (Grande - Destacado) -->
+        <div class="relative group">
+          <div
+            class="bg-gradient-to-r from-gray-800/40 to-gray-700/40 rounded-2xl p-6 backdrop-blur-sm border border-gray-600/30 hover:border-teal-400/50 transition-all duration-500"
+          >
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <!-- Imagen del evento -->
+              <div class="relative">
+                <div
+                  class="absolute -inset-2 bg-gradient-to-r from-gray-500 to-gray-400 border border-red-500/30 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"
+                >
                 </div>
-                
-                <!-- Información del evento -->
-                <div class="space-y-6">
-                  <div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-                      {content.eventos.eventList[0].title}
-                    </h2>
-                   
-                  </div>
-                  
-                  <!-- Botón de acción -->
-                  <div class="pt-4">
-                    <ButtonIXSY
-                      text="REGISTRO"
-                      size={'md'}
-                      variantButton={color}
-                      href="https://www.eventbrite.com.mx/e/ixsy-meeting-2025-tickets-1262827463939" 
-                    >
-                    REGISTRO
-                    </ButtonIXSY>
-                  </div>
-                </div>
+                <img
+                  src={content.eventos.eventList[0].image}
+                  alt={content.eventos.eventList[0].title}
+                  class="relative w-full rounded-2xl shadow-2xl transform group-hover:scale-105 transition-transform duration-500"
+                  style="min-height: 300px; object-fit: cover;"
+                />
               </div>
-            </div>
-          </div>
 
-          <!-- Evento 2024 (Mediano - Con borde teal) -->
-          <div class="relative group">
-            <div class="bg-gradient-to-r from-gray-800/40 to-gray-700/40 rounded-2xl p-6 backdrop-blur-sm border border-gray-600/30 hover:border-teal-400/50 transition-all duration-500">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-                
-                <!-- Imagen del evento -->
-                <div class="relative">
-                  <div class="absolute -inset-2 bg-gradient-to-r from-gray-500 to-gray-400 rounded-xl blur opacity-30 group-hover:opacity-50 transition duration-500"></div>
-                  <img 
-                    src={content.eventos.eventList[1].image}
-                    alt={content.eventos.eventList[1].title}
-                    class="relative w-full rounded-xl shadow-xl transform group-hover:scale-105 transition-transform duration-500"
-                    style="min-height: 300px; object-fit: cover;"
-                  />
-                  
-                </div>
-                
-                <!-- Información del evento -->
-                <div class="space-y-4">
-                  <h2 class="text-2xl md:text-3xl font-bold text-white">
-                    {content.eventos.eventList[1].title}
+              <!-- Información del evento -->
+              <div class="space-y-6">
+                <div>
+                  <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                    {content.eventos.eventList[0].title}
                   </h2>
-                  
-                  
-                  <!-- Botón de acción -->
-                  <ButtonIXSY 
-                    text="REGISTRO" 
-                    href="https://www.eventbrite.com.mx/e/ixsy-meeting-2024-tickets-860087554027" 
+                </div>
+
+                <!-- Botón de acción -->
+                <div class="pt-4">
+                  <ButtonIXSY
+                    text="REGISTRO"
+                    size={"md"}
+                    variantButton={color}
+                    href="https://www.eventbrite.com.mx/e/ixsy-meeting-2025-tickets-1262827463939"
                   >
                     REGISTRO
                   </ButtonIXSY>
@@ -172,99 +131,140 @@ const content = {
               </div>
             </div>
           </div>
-
-          <!-- Evento 2023 -->
-          <div class="relative group">
-            <div class="bg-gradient-to-r from-gray-800/40 to-gray-700/40 rounded-2xl p-6 backdrop-blur-sm border border-gray-600/30 hover:border-teal-400/50 transition-all duration-500">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-                
-                <!-- Imagen del evento -->
-                <div class="relative">
-                  <div class="absolute -inset-1 bg-gradient-to-r from-gray-500 to-gray-400 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
-                  <img 
-                    src={content.eventos.eventList[2].image}
-                    alt={content.eventos.eventList[2].title}
-                    class="relative w-full rounded-lg shadow-lg transform group-hover:scale-105 transition-transform duration-500"
-                    style="min-height: 300px; object-fit: cover;"
-                  />
-                </div>
-                
-                <!-- Información del evento -->
-                <div class="space-y-4">
-                  <h2 class="text-xl md:text-2xl font-bold text-white">
-                    {content.eventos.eventList[2].title}
-                  </h2>
-                  
-                  
-                  <!-- Botón de acción -->
-                  <ButtonIXSY 
-                    text="LEER LA RESEÑA" 
-                    href="https://img1.wsimg.com/blobby/go/76ec4aed-c739-43df-97c0-1886adc9ab12/20231008_Resena_IXSY_Meeting_2023.pdf" 
-                  >
-                    LEER LA RESEÑA
-                  </ButtonIXSY>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Evento 2022 (Pequeño - Con dimensiones) -->
-          <div class="relative group">
-            <div class="bg-gradient-to-r from-gray-800/40 to-gray-700/40 rounded-2xl p-6 backdrop-blur-sm border border-gray-600/30 hover:border-teal-400/50 transition-all duration-500">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-                
-                <!-- Imagen del evento -->
-                <div class="relative">
-                  <div class="absolute -inset-1 bg-gradient-to-r from-gray-500 to-gray-400 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
-                  <img 
-                    src={content.eventos.eventList[3].image}
-                    alt={content.eventos.eventList[3].title}
-                    class="relative w-full rounded-lg shadow-lg transform group-hover:scale-105 transition-transform duration-500"
-                    style="min-height: 300px; object-fit: cover;"
-                  />
-                </div>
-                
-                <!-- Información del evento -->
-                <div class="space-y-4">
-                  <h2 class="text-xl md:text-2xl font-bold text-white">
-                    {content.eventos.eventList[3].title}
-                  </h2>
-                 
-                  
-                  <!-- Botón de acción -->
-                  <ButtonIXSY 
-                    text="LEER LA RESEÑA" 
-                    href="" 
-                  >
-                    LEER LA RESEÑA
-                  </ButtonIXSY>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
 
-        <!-- Sección de información adicional -->
-        <div class="mt-20 text-center">
-          <div class="bg-gray-800/50 backdrop-blur-lg rounded-lg p-8 border border-gray-700/50 max-w-4xl mx-auto">
-            <h3 class="text-2xl font-bold text-white mb-4">
-              ¿Quieres participar en nuestros próximos eventos?
-            </h3>
-            <p class="text-gray-300 mb-6 leading-relaxed">
-              Mantente al día con las últimas noticias y eventos de IXSY. Únete a nuestra comunidad y fortalece la infraestructura digital del sureste mexicano.
-            </p>
-            <ButtonIXSY 
-              text="CONTACTAR" 
-              href="/contact" 
-            >
-              CONTACTAR
-            </ButtonIXSY>
+        <!-- Evento 2024 (Mediano - Con borde teal) -->
+        <div class="relative group">
+          <div
+            class="bg-gradient-to-r from-gray-800/40 to-gray-700/40 rounded-2xl p-6 backdrop-blur-sm border border-gray-600/30 hover:border-teal-400/50 transition-all duration-500"
+          >
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+              <!-- Imagen del evento -->
+              <div class="relative">
+                <div
+                  class="absolute -inset-2 bg-gradient-to-r from-gray-500 to-gray-400 rounded-xl blur opacity-30 group-hover:opacity-50 transition duration-500"
+                >
+                </div>
+                <img
+                  src={content.eventos.eventList[1].image}
+                  alt={content.eventos.eventList[1].title}
+                  class="relative w-full rounded-xl shadow-xl transform group-hover:scale-105 transition-transform duration-500"
+                  style="min-height: 300px; object-fit: cover;"
+                />
+              </div>
+
+              <!-- Información del evento -->
+              <div class="space-y-4">
+                <h2 class="text-2xl md:text-3xl font-bold text-white">
+                  {content.eventos.eventList[1].title}
+                </h2>
+
+                <!-- Botón de acción -->
+                <ButtonIXSY
+                  text="REGISTRO"
+                  href="https://www.eventbrite.com.mx/e/ixsy-meeting-2024-tickets-860087554027"
+                >
+                  REGISTRO
+                </ButtonIXSY>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Evento 2023 -->
+        <div class="relative group">
+          <div
+            class="bg-gradient-to-r from-gray-800/40 to-gray-700/40 rounded-2xl p-6 backdrop-blur-sm border border-gray-600/30 hover:border-teal-400/50 transition-all duration-500"
+          >
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+              <!-- Imagen del evento -->
+              <div class="relative">
+                <div
+                  class="absolute -inset-1 bg-gradient-to-r from-gray-500 to-gray-400 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-500"
+                >
+                </div>
+                <img
+                  src={content.eventos.eventList[2].image}
+                  alt={content.eventos.eventList[2].title}
+                  class="relative w-full rounded-lg shadow-lg transform group-hover:scale-105 transition-transform duration-500"
+                  style="min-height: 300px; object-fit: cover;"
+                />
+              </div>
+
+              <!-- Información del evento -->
+              <div class="space-y-4">
+                <h2 class="text-xl md:text-2xl font-bold text-white">
+                  {content.eventos.eventList[2].title}
+                </h2>
+
+                <!-- Botón de acción -->
+                <ButtonIXSY
+                  text="LEER LA RESEÑA"
+                  href="https://img1.wsimg.com/blobby/go/76ec4aed-c739-43df-97c0-1886adc9ab12/20231008_Resena_IXSY_Meeting_2023.pdf"
+                >
+                  LEER LA RESEÑA
+                </ButtonIXSY>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Evento 2022 (Pequeño - Con dimensiones) -->
+        <div class="relative group">
+          <div
+            class="bg-gradient-to-r from-gray-800/40 to-gray-700/40 rounded-2xl p-6 backdrop-blur-sm border border-gray-600/30 hover:border-teal-400/50 transition-all duration-500"
+          >
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+              <!-- Imagen del evento -->
+              <div class="relative">
+                <div
+                  class="absolute -inset-1 bg-gradient-to-r from-gray-500 to-gray-400 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-500"
+                >
+                </div>
+                <img
+                  src={content.eventos.eventList[3].image}
+                  alt={content.eventos.eventList[3].title}
+                  class="relative w-full rounded-lg shadow-lg transform group-hover:scale-105 transition-transform duration-500"
+                  style="min-height: 300px; object-fit: cover;"
+                />
+              </div>
+
+              <!-- Información del evento -->
+              <div class="space-y-4">
+                <h2 class="text-xl md:text-2xl font-bold text-white">
+                  {content.eventos.eventList[3].title}
+                </h2>
+
+                <!-- Botón de acción -->
+                <ButtonIXSY text="LEER LA RESEÑA" href="">
+                  LEER LA RESEÑA
+                </ButtonIXSY>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
+
+  <!-- Sección de información adicional (NUEVA sección, misma estructura que en otras páginas) -->
+  <section class="relative py-16 pb-20">
+    <div class="relative z-10 container mx-auto px-4">
+      <div
+        class="bg-gray-800/50 backdrop-blur-lg rounded-lg p-8 border border-gray-700/50 max-w-4xl mx-auto text-center"
+      >
+        <h3 class="text-2xl font-bold text-white mb-4">
+          ¿Quieres participar en nuestros próximos eventos?
+        </h3>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          Mantente al día con las últimas noticias y eventos de IXSY. Únete a
+          nuestra comunidad y fortalece la infraestructura digital del sureste
+          mexicano.
+        </p>
+        <ButtonIXSY text="CONTACTAR" href="/contact"> CONTACTAR </ButtonIXSY>
+      </div>
+    </div>
+  </section>
 </Layout>
 
 <style>
@@ -279,25 +279,24 @@ const content = {
       transform: translateY(0);
     }
   }
-  
+
   section > div {
     animation: fadeInUp 0.8s ease-out;
   }
 
-  /* Efectos de gradiente animados */
+  /* Efectos de gradiente animados (solo apariencia de las cards) */
   @keyframes gradientShift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
   }
-  
+
   .bg-gradient-to-r {
     background-size: 200% 200%;
     animation: gradientShift 8s ease infinite;
-  }
-
-  /* Animaciones para las líneas SVG */
-  @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
   }
 </style>

@@ -1,23 +1,27 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from "../../layouts/Layout.astro";
 
 // Contenido centralizado para fácil modificación
 const content = {
   title: "IXSY - Políticas",
   hero: {
     title: "Políticas",
-    description: "Conoce nuestras políticas de intercambio de tráfico, privacidad y administración de rutas."
+    description:
+      "Conoce nuestras políticas de intercambio de tráfico, privacidad y administración de rutas.",
   },
   policies: {
     peering: {
       title: "Políticas de peering",
-      description: "Políticas sobre el intercambio de tráfico entre participantes del IXP.",
+      description:
+        "Políticas sobre el intercambio de tráfico entre participantes del IXP.",
       pdfPath: "/pdfs/politicas-peering.pdf",
-      content: "El intercambio de tráfico en Internet Exchange Services Yucatán A.C. - IXSY - se realiza bajo modalidades de interconexión que permiten acuerdos multilaterales y bilaterales. En el modelo BILATERAL, cualquier participante puede establecer la relación que necesite con otros participantes en el IXP. Los enrutadores de borde de los participantes establecen sesiones de BGP con los enrutadores de borde de otros participantes. En el modelo MULTILATERAL, cualquier participante que suscriba el acuerdo de adhesión debe intercambiar tráfico de manera obligatoria con todos los demás participantes que también lo hayan suscrito."
+      content:
+        "El intercambio de tráfico en Internet Exchange Services Yucatán A.C. - IXSY - se realiza bajo modalidades de interconexión que permiten acuerdos multilaterales y bilaterales. En el modelo BILATERAL, cualquier participante puede establecer la relación que necesite con otros participantes en el IXP. Los enrutadores de borde de los participantes establecen sesiones de BGP con los enrutadores de borde de otros participantes. En el modelo MULTILATERAL, cualquier participante que suscriba el acuerdo de adhesión debe intercambiar tráfico de manera obligatoria con todos los demás participantes que también lo hayan suscrito.",
     },
     privacidad: {
       title: "Política de privacidad",
-      description: "Información sobre el manejo y protección de datos personales.",
+      description:
+        "Información sobre el manejo y protección de datos personales.",
       haspdf: false,
       content: `
         <div class="space-y-6 text-gray-300">
@@ -72,245 +76,286 @@ const content = {
             </p>
           </div>
         </div>
-      `
+      `,
     },
     routeServers: {
       title: "Route Servers",
-      description: "Políticas y configuración de los servidores de rutas del IXP.",
+      description:
+        "Políticas y configuración de los servidores de rutas del IXP.",
       pdfPath: "/pdfs/route-servers.pdf",
-      content: "Los Route Servers de IXSY facilitan el intercambio de rutas entre múltiples participantes sin necesidad de establecer sesiones BGP individuales. Ofrecen configuración automatizada de sesiones BGP, filtrado de rutas según políticas establecidas, monitoreo continuo de la calidad del servicio y soporte técnico especializado. Esta infraestructura permite una gestión más eficiente del intercambio de tráfico y reduce la complejidad operativa para los participantes del IXP."
-    }
-  }
+      content:
+        "Los Route Servers de IXSY facilitan el intercambio de rutas entre múltiples participantes sin necesidad de establecer sesiones BGP individuales. Ofrecen configuración automatizada de sesiones BGP, filtrado de rutas según políticas establecidas, monitoreo continuo de la calidad del servicio y soporte técnico especializado. Esta infraestructura permite una gestión más eficiente del intercambio de tráfico y reduce la complejidad operativa para los participantes del IXP.",
+    },
+  },
 };
 ---
 
 <Layout title={content.title}>
   <!-- Alpine.js -->
-  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    defer></script>
 
-  <!-- Contenedor principal con fondo único -->
-  <div 
-    class="min-h-screen bg-cover bg-center"
-    style="background-image: url('/home.svg');"
-  >
+  <!-- Hero Section -->
+  <section class="relative py-20 pt-32">
+    <!-- Overlay oscuro para mejorar legibilidad -->
+    <div class="absolute inset-0 bg-black/50 z-5"></div>
 
-    <!-- Hero Section -->
-    <section class="relative py-20 pt-32">
-      <!-- Overlay oscuro para mejorar legibilidad -->
-      <div class="absolute inset-0 bg-black/50 z-5"></div>
-      
-      <!-- Contenido del Hero -->
-      <div class="relative z-10 container mx-auto px-4 text-center">
-        <div class="max-w-4xl mx-auto space-y-6 text-white">
-          <div class="text-teal-400 font-semibold text-lg mb-2">
-            POLÍTICAS
-          </div>
-          
-          <h1 class="text-4xl md:text-6xl font-bold leading-tight">
-            {content.hero.title}
-          </h1>
+    <!-- Contenido del Hero -->
+    <div class="relative z-10 container mx-auto px-4 text-center">
+      <div class="max-w-4xl mx-auto space-y-6 text-white">
+        <div class="text-teal-400 font-semibold text-lg mb-2">POLÍTICAS</div>
 
-          <p class="text-lg text-gray-200 leading-relaxed max-w-2xl mx-auto">
-            {content.hero.description}
-          </p>
-        </div>
+        <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+          {content.hero.title}
+        </h1>
+
+        <p class="text-lg text-gray-200 leading-relaxed max-w-2xl mx-auto">
+          {content.hero.description}
+        </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Políticas Section con Pestañas -->
-    <section class="relative py-12 pb-20">
-      <!-- Overlay oscuro para mejorar legibilidad -->
-      <div class="absolute inset-0 bg-black/50 z-5"></div>
-      
-      <div class="relative z-10 container mx-auto px-4">
-        
-        <!-- Pestañas/Tabs con Alpine.js -->
-        <div 
-          x-data="{
+  <!-- Políticas Section con Pestañas -->
+  <section class="relative py-12 pb-20">
+    <!-- Overlay oscuro para mejorar legibilidad -->
+    <div class="absolute inset-0 bg-black/50 z-5"></div>
+
+    <div class="relative z-10 container mx-auto px-4">
+      <!-- Pestañas/Tabs con Alpine.js -->
+      <div
+        x-data="{
             activeTab: 'peering',
             setActiveTab(tab) {
               this.activeTab = tab;
             }
           }"
-          class="max-w-6xl mx-auto"
-        >
-          
-          <!-- Navegación de pestañas -->
-          <div class="flex justify-center mb-8">
-            <div class="inline-flex bg-black/40 backdrop-blur-md rounded-full p-2">
-              <button 
-                @click="setActiveTab('peering')"
-                :class="activeTab === 'peering' ? 'bg-teal-500 text-white' : 'text-gray-300 hover:text-white hover:bg-gray-700/50'"
-                class="px-6 py-3 rounded-full text-sm font-medium transition-all duration-300"
-              >
-                Peering
-              </button>
-              <button 
-                @click="setActiveTab('privacidad')"
-                :class="activeTab === 'privacidad' ? 'bg-teal-500 text-white' : 'text-gray-300 hover:text-white hover:bg-gray-700/50'"
-                class="px-6 py-3 rounded-full text-sm font-medium transition-all duration-300"
-              >
-                Privacidad
-              </button>
-              <button 
-                @click="setActiveTab('routeServers')"
-                :class="activeTab === 'routeServers' ? 'bg-teal-500 text-white' : 'text-gray-300 hover:text-white hover:bg-gray-700/50'"
-                class="px-6 py-3 rounded-full text-sm font-medium transition-all duration-300"
-              >
-                Route Servers
-              </button>
+        class="max-w-6xl mx-auto"
+      >
+        <!-- Navegación de pestañas -->
+        <div class="flex justify-center mb-8">
+          <div
+            class="inline-flex bg-black/40 backdrop-blur-md rounded-full p-2"
+          >
+            <button
+              @click="setActiveTab('peering')"
+              :class="activeTab === 'peering' ? 'bg-teal-500 text-white' : 'text-gray-300 hover:text-white hover:bg-gray-700/50'"
+              class="px-6 py-3 rounded-full text-sm font-medium transition-all duration-300"
+            >
+              Peering
+            </button>
+            <button
+              @click="setActiveTab('privacidad')"
+              :class="activeTab === 'privacidad' ? 'bg-teal-500 text-white' : 'text-gray-300 hover:text-white hover:bg-gray-700/50'"
+              class="px-6 py-3 rounded-full text-sm font-medium transition-all duration-300"
+            >
+              Privacidad
+            </button>
+            <button
+              @click="setActiveTab('routeServers')"
+              :class="activeTab === 'routeServers' ? 'bg-teal-500 text-white' : 'text-gray-300 hover:text-white hover:bg-gray-700/50'"
+              class="px-6 py-3 rounded-full text-sm font-medium transition-all duration-300"
+            >
+              Route Servers
+            </button>
+          </div>
+        </div>
+
+        <!-- Contenido de las pestañas -->
+        <div class="bg-black/20 backdrop-blur-md rounded-2xl overflow-hidden">
+          <!-- Tab Peering -->
+          <div
+            x-show="activeTab === 'peering'"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 transform translate-y-4"
+            x-transition:enter-end="opacity-100 transform translate-y-0"
+          >
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8">
+              <!-- Columna izquierda - Información -->
+              <div class="space-y-6">
+                <div>
+                  <h2 class="text-3xl font-bold text-white mb-4">
+                    {content.policies.peering.title}
+                  </h2>
+                  <p class="text-gray-300 mb-6">
+                    {content.policies.peering.description}
+                  </p>
+                </div>
+
+                <!-- Contenido dinámico -->
+                <p class="text-gray-300 leading-relaxed">
+                  {content.policies.peering.content}
+                </p>
+
+                <!-- Botón de descarga -->
+                <div class="pt-6">
+                  <a
+                    href={content.policies.peering.pdfPath}
+                    download
+                    class="inline-flex items-center px-6 py-3 bg-teal-500 hover:bg-teal-600 text-white font-medium rounded-full transition-colors duration-300"
+                  >
+                    <svg
+                      class="w-5 h-5 mr-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                      ></path>
+                    </svg>
+                    DESCARGAR PDF
+                  </a>
+                </div>
+              </div>
+
+              <!-- Columna derecha - Previsualización PDF -->
+              <div class="relative">
+                <div class="bg-white rounded-lg shadow-2xl overflow-hidden">
+                  <!-- Preview del PDF como imagen o placeholder -->
+                  <div
+                    class="relative h-96 bg-gray-50 flex items-center justify-center"
+                  >
+                    <!-- Imagen de preview del PDF -->
+                    <div class="text-center">
+                      <img
+                        src="/politicas/politicas-peering_page-0001.jpg"
+                        alt="Vista previa PDF Políticas de Peering"
+                        class="mx-auto rounded shadow-lg max-h-80"
+                      />
+                      <p class="text-gray-600 text-sm">
+                        Vista previa del documento
+                      </p>
+                      <p class="text-gray-400 text-xs mt-1">
+                        Políticas de Peering - IXSY
+                      </p>
+                    </div>
+
+                    <!-- Overlay para efectos adicionales -->
+                    <div
+                      class="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent pointer-events-none"
+                    >
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Contenido de las pestañas -->
-          <div class="bg-black/20 backdrop-blur-md rounded-2xl overflow-hidden">
-            
-            <!-- Tab Peering -->
-            <div x-show="activeTab === 'peering'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform translate-y-4" x-transition:enter-end="opacity-100 transform translate-y-0">
-              <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8">
-                
-                <!-- Columna izquierda - Información -->
-                <div class="space-y-6">
-                  <div>
-                    <h2 class="text-3xl font-bold text-white mb-4">
-                      {content.policies.peering.title}
-                    </h2>
-                    <p class="text-gray-300 mb-6">
-                      {content.policies.peering.description}
-                    </p>
-                  </div>
-                  
-                  <!-- Contenido dinámico -->
-                  <p class="text-gray-300 leading-relaxed">
-                    {content.policies.peering.content}
+          <!-- Tab Privacidad -->
+          <div
+            x-show="activeTab === 'privacidad'"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 transform translate-y-4"
+            x-transition:enter-end="opacity-100 transform translate-y-0"
+          >
+            <div class="p-8">
+              <!-- Contenido completo de privacidad (solo texto) -->
+              <div class="max-w-4xl mx-auto space-y-6">
+                <div class="text-center mb-8">
+                  <h2 class="text-3xl font-bold text-white mb-4">
+                    {content.policies.privacidad.title}
+                  </h2>
+                  <p class="text-gray-300">
+                    {content.policies.privacidad.description}
                   </p>
-                  
-                  <!-- Botón de descarga -->
-                  <div class="pt-6">
-                    <a 
-                      href={content.policies.peering.pdfPath}
-                      download
-                      class="inline-flex items-center px-6 py-3 bg-teal-500 hover:bg-teal-600 text-white font-medium rounded-full transition-colors duration-300"
-                    >
-                      <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                      </svg>
-                      DESCARGAR PDF
-                    </a>
-                  </div>
                 </div>
-                
-                <!-- Columna derecha - Previsualización PDF -->
-                <div class="relative">
-                  <div class="bg-white rounded-lg shadow-2xl overflow-hidden">
-                    
-                    <!-- Preview del PDF como imagen o placeholder -->
-                    <div class="relative h-96 bg-gray-50 flex items-center justify-center">
-                      <!-- Imagen de preview del PDF -->
-                      <div class="text-center">
-                      <img 
-                        src="/politicas/politicas-peering_page-0001.jpg" 
-                        alt="Vista previa PDF Políticas de Peering" 
+
+                <!-- Contenido dinámico -->
+                <div set:html={content.policies.privacidad.content} />
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab Route Servers -->
+          <div
+            x-show="activeTab === 'routeServers'"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 transform translate-y-4"
+            x-transition:enter-end="opacity-100 transform translate-y-0"
+          >
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8">
+              <!-- Columna izquierda - Información -->
+              <div class="space-y-6">
+                <div>
+                  <h2 class="text-3xl font-bold text-white mb-4">
+                    {content.policies.routeServers.title}
+                  </h2>
+                  <p class="text-gray-300 mb-6">
+                    {content.policies.routeServers.description}
+                  </p>
+                </div>
+
+                <!-- Contenido dinámico -->
+                <p class="text-gray-300 leading-relaxed">
+                  {content.policies.routeServers.content}
+                </p>
+
+                <!-- Botón de descarga -->
+                <div class="pt-6">
+                  <a
+                    href={content.policies.routeServers.pdfPath}
+                    download
+                    class="inline-flex items-center px-6 py-3 bg-teal-500 hover:bg-teal-600 text-white font-medium rounded-full transition-colors duration-300"
+                  >
+                    <svg
+                      class="w-5 h-5 mr-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                      ></path>
+                    </svg>
+                    DESCARGAR PDF
+                  </a>
+                </div>
+              </div>
+
+              <!-- Columna derecha - Previsualización PDF -->
+              <div class="relative">
+                <div class="bg-white rounded-lg shadow-2xl overflow-hidden">
+                  <!-- Preview del PDF como imagen o placeholder -->
+                  <div
+                    class="relative h-96 bg-gray-50 flex items-center justify-center"
+                  >
+                    <!-- Imagen de preview del PDF -->
+                    <div class="text-center">
+                      <img
+                        src="/politicas/route-servers_page-0001.jpg"
+                        alt="Vista previa PDF Route Servers"
                         class="mx-auto rounded shadow-lg max-h-80"
                       />
-                      <p class="text-gray-600 text-sm">Vista previa del documento</p>
-                      <p class="text-gray-400 text-xs mt-1">Políticas de Peering - IXSY</p>
+                      <p class="text-gray-600 text-sm">
+                        Vista previa del documento
+                      </p>
+                      <p class="text-gray-400 text-xs mt-1">
+                        Route Servers - IXSY
+                      </p>
                     </div>
-                      
-                      <!-- Overlay para efectos adicionales -->
-                      <div class="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent pointer-events-none"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            <!-- Tab Privacidad -->
-            <div x-show="activeTab === 'privacidad'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform translate-y-4" x-transition:enter-end="opacity-100 transform translate-y-0">
-              <div class="p-8">
-                
-                <!-- Contenido completo de privacidad (solo texto) -->
-                <div class="max-w-4xl mx-auto space-y-6">
-                  <div class="text-center mb-8">
-                    <h2 class="text-3xl font-bold text-white mb-4">
-                      {content.policies.privacidad.title}
-                    </h2>
-                    <p class="text-gray-300">
-                      {content.policies.privacidad.description}
-                    </p>
-                  </div>
-                  
-                  <!-- Contenido dinámico -->
-                  <div set:html={content.policies.privacidad.content} />
-                </div>
-              </div>
-            </div>
-
-            <!-- Tab Route Servers -->
-            <div x-show="activeTab === 'routeServers'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform translate-y-4" x-transition:enter-end="opacity-100 transform translate-y-0">
-              <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8">
-                
-                <!-- Columna izquierda - Información -->
-                <div class="space-y-6">
-                  <div>
-                    <h2 class="text-3xl font-bold text-white mb-4">
-                      {content.policies.routeServers.title}
-                    </h2>
-                    <p class="text-gray-300 mb-6">
-                      {content.policies.routeServers.description}
-                    </p>
-                  </div>
-                  
-                  <!-- Contenido dinámico -->
-                  <p class="text-gray-300 leading-relaxed">
-                    {content.policies.routeServers.content}
-                  </p>
-                  
-                  <!-- Botón de descarga -->
-                  <div class="pt-6">
-                    <a 
-                      href={content.policies.routeServers.pdfPath}
-                      download
-                      class="inline-flex items-center px-6 py-3 bg-teal-500 hover:bg-teal-600 text-white font-medium rounded-full transition-colors duration-300"
+                    <!-- Overlay para efectos adicionales -->
+                    <div
+                      class="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent pointer-events-none"
                     >
-                      <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                      </svg>
-                      DESCARGAR PDF
-                    </a>
-                  </div>
-                </div>
-                
-                <!-- Columna derecha - Previsualización PDF -->
-                <div class="relative">
-                  <div class="bg-white rounded-lg shadow-2xl overflow-hidden">
-                    
-                    <!-- Preview del PDF como imagen o placeholder -->
-                    <div class="relative h-96 bg-gray-50 flex items-center justify-center">
-                      <!-- Imagen de preview del PDF -->
-                      <div class="text-center">
-                      <img 
-                        src="/politicas/route-servers_page-0001.jpg" 
-                        alt="Vista previa PDF Route Servers" 
-                        class="mx-auto rounded shadow-lg max-h-80"
-                      />
-                      <p class="text-gray-600 text-sm">Vista previa del documento</p>
-                      <p class="text-gray-400 text-xs mt-1">Route Servers - IXSY</p>
-                    </div>
-                      
-                      <!-- Overlay para efectos adicionales -->
-                      <div class="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent pointer-events-none"></div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </Layout>
 
 <style>
@@ -325,7 +370,7 @@ const content = {
       transform: translateY(0);
     }
   }
-  
+
   /* Aplicar animación a secciones cuando sean visibles */
   section > div {
     animation: fadeInUp 0.8s ease-out;
@@ -341,17 +386,17 @@ const content = {
     .grid-cols-1.lg\\:grid-cols-2 {
       grid-template-columns: 1fr;
     }
-    
+
     .h-96 {
       height: 300px;
     }
   }
-  
+
   @media (max-width: 768px) {
     .h-96 {
       height: 250px;
     }
-    
+
     .px-6 {
       padding-left: 1rem;
       padding-right: 1rem;

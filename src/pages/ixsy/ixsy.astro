@@ -1,66 +1,75 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import ButtonIXSY from '../../components/ButtonIXSY/ButtonIXSY'
-import Carrucel from '../../components/Carrucel/Carrucel'
+import Layout from "../../layouts/Layout.astro";
+import ButtonIXSY from "../../components/ButtonIXSY/ButtonIXSY";
+import Carrucel from "../../components/Carrucel/Carrucel";
 
 const content = {
   title: "IXSY - Internet Exchange Service Yucatán",
   ixsy: {
     title: "Internet Exchange Service Yucatán",
     subtitle: "NOSOTROS",
-    description: "Internet Exchange Services Yucatán (IXSY) es una asociación civil comprometida con la transformación digital del  sureste mexicano. Como administradores del Nodo IXP en Yucatán, operamos de manera neutral para fortalecer el tráfico de Internet en la región, asegurando que las redes locales intercambien información de forma eficiente, rápida, segura, estable, y rentable. Nuestra misión es clara: eliminar la necesidad de que el tráfico local  tenga que viajar al extranjero, mejorando la conectividad en nuestra  comunidad.",
-    images: [
-      { src: "/ixsy_google.jpg" },
-      { src: "/ixsy_google2.jpg" }
-    ]
+    description:
+      "Internet Exchange Services Yucatán (IXSY) es una asociación civil comprometida con la transformación digital del  sureste mexicano. Como administradores del Nodo IXP en Yucatán, operamos de manera neutral para fortalecer el tráfico de Internet en la región, asegurando que las redes locales intercambien información de forma eficiente, rápida, segura, estable, y rentable. Nuestra misión es clara: eliminar la necesidad de que el tráfico local  tenga que viajar al extranjero, mejorando la conectividad en nuestra  comunidad.",
+    images: [{ src: "/ixsy_google.jpg" }, { src: "/ixsy_google2.jpg" }],
   },
 
   node_ixp: {
     title: "Nodo IXP",
     subtitle: "¿Qué es un Nodo IXP?",
-    description: "Un Punto de Intercambio de Internet o Internet Exchange Point (IXP) es una infraestructura crítica que permite a los proveedores de servicios de Internet (ISP), empresas de contenido, y otras entidades, intercambiar tráfico de datos de manera directa y eficiente. En lugar de enviar tráfico a través de rutas largas e indirectas que pueden cruzar múltiples redes y fronteras, un IXP facilita el enrutamiento local del tráfico, resolviendo muchos de los problemas de conectividad que afectan la velocidad y la calidad del internet.",
+    description:
+      "Un Punto de Intercambio de Internet o Internet Exchange Point (IXP) es una infraestructura crítica que permite a los proveedores de servicios de Internet (ISP), empresas de contenido, y otras entidades, intercambiar tráfico de datos de manera directa y eficiente. En lugar de enviar tráfico a través de rutas largas e indirectas que pueden cruzar múltiples redes y fronteras, un IXP facilita el enrutamiento local del tráfico, resolviendo muchos de los problemas de conectividad que afectan la velocidad y la calidad del internet.",
     subtitle_2: "Como funciona un Nodo IXP",
-    description_2: "En un IXP, los miembros—ya sean ISP, proveedores de contenido, o entidades gubernamentales—establecen relaciones de peering, que permiten el intercambio directo de tráfico a través de una plataforma común de conmutación. Este modelo de interconexión reduce la dependencia de terceros para el tránsito de datos, optimizando la velocidad y seguridad del tráfico de Internet.",
-    description_3:"Los nodos IXP no solo son puntos donde las redes se conectan, sino también centros neurálgicos donde se concentran los esfuerzos para mejorar la infraestructura tecnológica de la región. En Yucatán, esta labor se refleja en la participación activa de gobiernos, universidades, empresas y otros actores clave, todos comprometidos con la expansión y mejora continua de la conectividad local.",
+    description_2:
+      "En un IXP, los miembros—ya sean ISP, proveedores de contenido, o entidades gubernamentales—establecen relaciones de peering, que permiten el intercambio directo de tráfico a través de una plataforma común de conmutación. Este modelo de interconexión reduce la dependencia de terceros para el tránsito de datos, optimizando la velocidad y seguridad del tráfico de Internet.",
+    description_3:
+      "Los nodos IXP no solo son puntos donde las redes se conectan, sino también centros neurálgicos donde se concentran los esfuerzos para mejorar la infraestructura tecnológica de la región. En Yucatán, esta labor se refleja en la participación activa de gobiernos, universidades, empresas y otros actores clave, todos comprometidos con la expansión y mejora continua de la conectividad local.",
     beneficios: [
       {
-        title: "Disponibilidad de las redes en situaciones de emergencia o catástrofe"
+        title:
+          "Disponibilidad de las redes en situaciones de emergencia o catástrofe",
       },
       {
-        title: "Reducción de costos operativos y de mantenimiento de modo directo y a corto plazo"
+        title:
+          "Reducción de costos operativos y de mantenimiento de modo directo y a corto plazo",
       },
       {
-        title: "Reducción de tráfico internacional los costos y barreras de ingreso a nuevos actores y servicios"
+        title:
+          "Reducción de tráfico internacional los costos y barreras de ingreso a nuevos actores y servicios",
       },
       {
-        title: "Comunidad regional y coparticipación para un bien común"
+        title: "Comunidad regional y coparticipación para un bien común",
       },
       {
-        title: "Introducción de nuevas tecnologías"
+        title: "Introducción de nuevas tecnologías",
       },
       {
-        title: "La velocidad de internet aumenta y mejora la calidad de servicio"
+        title:
+          "La velocidad de internet aumenta y mejora la calidad de servicio",
       },
     ],
   },
 
   compromiso: {
     title: "Compromiso de IXSY",
-    description: "IXSY no es simplemente un punto de intercambio de tráfico de Internet; es un motor clave para impulsar el desarrollo regional. Nuestra solidez y  credibilidad se construyen sobre los siguientes pilares:",
+    description:
+      "IXSY no es simplemente un punto de intercambio de tráfico de Internet; es un motor clave para impulsar el desarrollo regional. Nuestra solidez y  credibilidad se construyen sobre los siguientes pilares:",
     pillars: [
       {
         title: "Neutralidad y transparencia",
-        description: "Nos regimos por estrictos principios de neutralidad, garantizando  igualdad de condiciones y acceso a todas las entidades conectadas a  nuestro IXP."
+        description:
+          "Nos regimos por estrictos principios de neutralidad, garantizando  igualdad de condiciones y acceso a todas las entidades conectadas a  nuestro IXP.",
       },
       {
         title: "Infraestructura sólida",
-        description: "IXSY es el eje de la infraestructura digital en Yucatán,  proporcionando a empresarios del sector tecnológico e internet una  plataforma confiable para el intercambio eficiente de datos."
+        description:
+          "IXSY es el eje de la infraestructura digital en Yucatán,  proporcionando a empresarios del sector tecnológico e internet una  plataforma confiable para el intercambio eficiente de datos.",
       },
       {
         title: "Compromiso con la comunidad",
-        description: "Colaboramos de manera estrecha con gobiernos, empresas,  instituciones académicas y organizaciones internacionales, con el fin de crear un ecosistema digital robusto y sostenible para la región."
-      }
-    ]
+        description:
+          "Colaboramos de manera estrecha con gobiernos, empresas,  instituciones académicas y organizaciones internacionales, con el fin de crear un ecosistema digital robusto y sostenible para la región.",
+      },
+    ],
   },
   directivo: {
     title: "Consejo Directivo 2024 - 2026",
@@ -68,50 +77,54 @@ const content = {
       {
         name: "María del Carmen Denis Polanco",
         position: "Presidente del Consejo Directivo",
-        description: 'Cámara Nacional de la Industria Electrónica, de Telecomunicaciones y Tecnologías de la Información (CANIETI)',
-        image: "/carmen.svg"
+        description:
+          "Cámara Nacional de la Industria Electrónica, de Telecomunicaciones y Tecnologías de la Información (CANIETI)",
+        image: "/carmen.svg",
       },
       {
         name: "Geovanna Cecilia Campos Vázquez",
         position: "Vicepresidente del Consejo Directivo",
-        description:'Secretaría de Ciencia, Humanidades, Tecnología e Innovación (SECIHTI)'
+        description:
+          "Secretaría de Ciencia, Humanidades, Tecnología e Innovación (SECIHTI)",
       },
       {
         name: "José Antonio Canto Esquivel",
         position: "Secretario del Consejo Directivo",
-        description:'Instituto Tecnológico de Mérida (ITM)'
+        description: "Instituto Tecnológico de Mérida (ITM)",
       },
       {
         name: "José Antonio Gutiérrez Palma",
         position: "Tesorero del Consejo Directivo",
-        description:'Cámara Nacional de la Industria Electrónica, de Telecomunicaciones y Tecnologías de la Información (CANIETI)'
+        description:
+          "Cámara Nacional de la Industria Electrónica, de Telecomunicaciones y Tecnologías de la Información (CANIETI)",
       },
       {
         name: "Jesús González Castro",
         position: "Vocal del Consejo Directivo",
-        description:'Subsecretario de Tecnologías de la Información y Comunicaciónes (SUBSETIC)'
+        description:
+          "Subsecretario de Tecnologías de la Información y Comunicaciónes (SUBSETIC)",
       },
       {
         name: "Mario Villamil Arguelles",
         position: "Vocal del Consejo Directivo",
-        description:'CONECTIKAN'
+        description: "CONECTIKAN",
       },
       {
         name: "Diego Roberto Viramontes Suárez",
         position: "Vocal del Consejo Directivo",
-        description:'DYRNET'
+        description: "DYRNET",
       },
       {
         name: "Eduardo Francisco Alvarado Mujica",
         position: "Vocal del Consejo Directivo",
-        description:'Redes y Asesorías del Mayab (RAM)'
+        description: "Redes y Asesorías del Mayab (RAM)",
       },
       {
         name: "Álvaro Alcalá",
         position: "Vocal del Consejo Directivo",
-        description:'QuattroCom'
-      }
-    ]
+        description: "QuattroCom",
+      },
+    ],
   },
   tecnico: {
     title: "Comité Técnico",
@@ -119,213 +132,215 @@ const content = {
       {
         name: "Carlos Alberto Urista Torres",
         position: "Vocal del Comité Técnico",
-        description:'Totalplay Empresarial S.A de C.V'
+        description: "Totalplay Empresarial S.A de C.V",
       },
       {
         name: "Jesús González Castro",
         position: "Vocal del Comité Técnico",
-        description:'Subsecretario de Tecnologías de la Información y Comunicaciónes (SUBSETIC)'
+        description:
+          "Subsecretario de Tecnologías de la Información y Comunicaciónes (SUBSETIC)",
       },
       {
         name: "Mario Villamil Arguelles",
         position: "Vocal del Comité Técnico",
-        description:'CONECTIKAN'
+        description: "CONECTIKAN",
       },
       {
         name: "Álvaro Alcalá",
         position: "Vocal del Comité Técnico",
-        description:'QuattroCom'
+        description: "QuattroCom",
       },
       {
         name: "Yadir Cruz",
         position: "Vocal del Comité Técnico",
-        description:'DYRNET'
+        description: "DYRNET",
       },
-    ]
-  }
+    ],
+  },
 };
 ---
 
 <Layout title={content.title}>
   <!-- Agrega esto dentro de tu <head> en Layout.astro o aquí arriba -->
-  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    defer></script>
 
-  <!-- Contenedor principal con fondo único -->
-  <div 
-    class="min-h-screen bg-cover bg-center"
-    style="background-image: url('/IXSY.svg');"
-  >
-    <!-- Sección IXSY completa -->
-    <section class="relative py-20 pt-32">
-      <!-- Overlay oscuro para mejorar legibilidad -->
-      <div class="absolute inset-0 bg-black/50 z-5"></div>
-      <div class="relative z-10 container mx-auto px-4">
+  <!-- Sección IXSY completa -->
+  <section class="relative py-20 pt-32">
+    <div class="relative z-10 container mx-auto px-4">
+      <div class="text-center mb-12">
+        <p class="text-xl text-white-400 font-medium mb-6">
+          {content.ixsy.subtitle}
+        </p>
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">
+          {content.ixsy.title}
+        </h1>
+      </div>
 
-        <div class="text-center mb-12">
-          <p class="text-xl text-white-400 font-medium mb-6">
-            {content.ixsy.subtitle}
+      <!-- Grid de dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <!-- Columna izquierda - Texto e información -->
+        <div class="space-y-6 text-white">
+          <p class="text-lg text-gray-300 leading-relaxed">
+            {content.ixsy.description}
           </p>
-          <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">
-            {content.ixsy.title}
-          </h1>
         </div>
-        
-        <!-- Grid de dos columnas -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <!-- Columna izquierda - Texto e información -->
-          <div class="space-y-6 text-white">
-            <p class="text-lg text-gray-300 leading-relaxed">
-              {content.ixsy.description}
-            </p>
-          </div>
-          
-          <!-- Columna derecha - Carrusel -->
-          <div class="relative">
-            <Carrucel
-              images={content.ixsy.images} 
-              autoplayInterval={5000}
-              showThumbnails={true}
-              client:load
-            />
-          </div>
+
+        <!-- Columna derecha - Carrusel -->
+        <div class="relative">
+          <Carrucel
+            images={content.ixsy.images}
+            autoplayInterval={5000}
+            showThumbnails={true}
+            client:load
+          />
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Sección Nodo IXP -->
-     <section class="relative py-20 pt-32">
-        <!-- Overlay oscuro para mejorar legibilidad -->
-      <div class="absolute inset-0 bg-black/50 z-5"></div>
-      <div class="relative z-10 container mx-auto px-4">
-
-        <div class="text-center mb-12">
-          <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">
-            {content.node_ixp.title}
-          </h1>
-        </div>
-        
-        <!-- Grid de dos columnas -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <!-- Columna izquierda - Texto e información -->
-          <div class="space-y-6 text-white">
-            <p class="text-lg text-gray-300 leading-relaxed">
-              {content.node_ixp.description}
-            </p>
-            <p class="text-lg text-gray-300 leading-relaxed">
-              {content.node_ixp.description_2}
-            </p>
-            <p class="text-lg text-gray-300 leading-relaxed">
-              {content.node_ixp.description_3}
-            </p>
-          </div>
-          
-          <!-- Columna derecha - Carrusel -->
-          <div class="relative">
-            <Carrucel
-              images={content.ixsy.images} 
-              autoplayInterval={5000}
-              showThumbnails={true}
-              client:load
-            />
-          </div>
-        </div>
+  <!-- Sección Nodo IXP -->
+  <section class="relative py-20 pt-32">
+    <!-- Overlay oscuro para mejorar legibilidad -->
+    <!-- <div class="absolute inset-0 bg-black/50 z-5"></div> -->
+    <div class="relative z-10 container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">
+          {content.node_ixp.title}
+        </h1>
       </div>
-     </section>
 
-    <!-- Sección compromiso de IXSY -->
-    <section class="relative py-12">
-      <!-- Overlay oscuro para mejorar legibilidad -->
-      <div class="absolute inset-0 bg-black/50 z-5"></div>
-
-      <div class="relative z-10 container mx-auto px-4">
-        <div class="max-w-4xl mx-auto text-center text-white">
-          <h2 class="text-4xl md:text-6xl font-bold text-white mb-4">
-            {content.compromiso.title}
-          </h2>
-          <p class="text-lg text-gray-300 leading-relaxed mb-8">
-            {content.compromiso.description}
+      <!-- Grid de dos columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <!-- Columna izquierda - Texto e información -->
+        <div class="space-y-6 text-white">
+          <p class="text-lg text-gray-300 leading-relaxed">
+            {content.node_ixp.description}
           </p>
-          
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            <div class="bg-gray-800/50 backdrop-blur-lg rounded-lg p-6 border border-gray-700/50 hover:border-teal-500/50 transition-all duration-300 hover:transform hover:scale-105">
-              <h3 class="text-xl font-bold text-teal-400 mb-4">
-                {content.compromiso.pillars[0].title}
-              </h3>
-              <p class="text-gray-300">
-                {content.compromiso.pillars[0].description}
-              </p>
-            </div>
-            
-            <div class="bg-gray-800/50 backdrop-blur-lg rounded-lg p-6 border border-gray-700/50 hover:border-teal-500/50 transition-all duration-300 hover:transform hover:scale-105">
-              <h3 class="text-xl font-bold text-teal-400 mb-4">
-                {content.compromiso.pillars[1].title}
-              </h3>
-              <p class="text-gray-300">
-                {content.compromiso.pillars[1].description}
-              </p>
-            </div>
-            
-            <div class="bg-gray-800/50 backdrop-blur-lg rounded-lg p-6 border border-gray-700/50 hover:border-teal-500/50 transition-all duration-300 hover:transform hover:scale-105">
-              <h3 class="text-xl font-bold text-teal-400 mb-4">
-                {content.compromiso.pillars[2].title}
-              </h3>
-              <p class="text-gray-300">
-                {content.compromiso.pillars[2].description}
-              </p>
-            </div>
-          </div>
+          <p class="text-lg text-gray-300 leading-relaxed">
+            {content.node_ixp.description_2}
+          </p>
+          <p class="text-lg text-gray-300 leading-relaxed">
+            {content.node_ixp.description_3}
+          </p>
+        </div>
+
+        <!-- Columna derecha - Carrusel -->
+        <div class="relative">
+          <Carrucel
+            images={content.ixsy.images}
+            autoplayInterval={5000}
+            showThumbnails={true}
+            client:load
+          />
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- seccion Consejo Directivo -->
-    <section class="relative py-12">
-      <!-- Overlay oscuro para mejorar legibilidad -->
-      <div class="absolute inset-0 bg-black/50 z-5"></div>
-      <div class="relative z-10 container mx-auto px-4">
-        
-        <!-- Título principal centrado -->
-        <div class="text-center mb-12">
-          <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
-            {content.directivo.title}
-          </h2>
-        </div>
+  <!-- Sección compromiso de IXSY -->
+  <section class="relative py-12">
+    <!-- Overlay oscuro para mejorar legibilidad -->
+    <!-- <div class="absolute inset-0 bg-black/50 z-5"></div> -->
 
-        <!-- Primera fila - Presidente (dos columnas) -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-12 max-w-6xl mx-auto">
-          <!-- Columna izquierda - Imagen -->
-          <div class="flex justify-center">
-            <div class="relative group">
-              <img 
-                src={content.directivo.members[0].image}
-                alt={content.directivo.members[0].name}
-                class="relative w-80 h-80 object-cover rounded-lg shadow-2xl transform transition-transform duration-300 group-hover:scale-[1.05]"
-              />
-            </div>
-          </div>
-          
-          <!-- Columna derecha - Información -->
-          <div class="text-white space-y-4">
-            <h3 class="text-3xl md:text-4xl font-bold text-white">
-              {content.directivo.members[0].name}
+    <div class="relative z-10 container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center text-white">
+        <h2 class="text-4xl md:text-6xl font-bold text-white mb-4">
+          {content.compromiso.title}
+        </h2>
+        <p class="text-lg text-gray-300 leading-relaxed mb-8">
+          {content.compromiso.description}
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          <div
+            class="bg-gray-800/50 backdrop-blur-lg rounded-lg p-6 border border-gray-700/50 hover:border-teal-500/50 transition-all duration-300 hover:transform hover:scale-105"
+          >
+            <h3 class="text-xl font-bold text-teal-400 mb-4">
+              {content.compromiso.pillars[0].title}
             </h3>
-            <p class="text-lg text-gray-300 leading-relaxed">
-              {content.directivo.members[0].description}
+            <p class="text-gray-300">
+              {content.compromiso.pillars[0].description}
             </p>
-            <p class="text-xl font-semibold text-teal-400">
-              {content.directivo.members[0].position}
+          </div>
+
+          <div
+            class="bg-gray-800/50 backdrop-blur-lg rounded-lg p-6 border border-gray-700/50 hover:border-teal-500/50 transition-all duration-300 hover:transform hover:scale-105"
+          >
+            <h3 class="text-xl font-bold text-teal-400 mb-4">
+              {content.compromiso.pillars[1].title}
+            </h3>
+            <p class="text-gray-300">
+              {content.compromiso.pillars[1].description}
+            </p>
+          </div>
+
+          <div
+            class="bg-gray-800/50 backdrop-blur-lg rounded-lg p-6 border border-gray-700/50 hover:border-teal-500/50 transition-all duration-300 hover:transform hover:scale-105"
+          >
+            <h3 class="text-xl font-bold text-teal-400 mb-4">
+              {content.compromiso.pillars[2].title}
+            </h3>
+            <p class="text-gray-300">
+              {content.compromiso.pillars[2].description}
             </p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Resto de miembros - Grid de cards -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-          {content.directivo.members.slice(1).map((member) => (
+  <!-- seccion Consejo Directivo -->
+  <section class="relative py-12">
+    <!-- Overlay oscuro para mejorar legibilidad -->
+    <!-- <div class="absolute inset-0 bg-black/50 z-5"></div> -->
+    <div class="relative z-10 container mx-auto px-4">
+      <!-- Título principal centrado -->
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+          {content.directivo.title}
+        </h2>
+      </div>
+
+      <!-- Primera fila - Presidente (dos columnas) -->
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-12 max-w-6xl mx-auto"
+      >
+        <!-- Columna izquierda - Imagen -->
+        <div class="flex justify-center">
+          <div class="relative group">
+            <img
+              src={content.directivo.members[0].image}
+              alt={content.directivo.members[0].name}
+              class="relative w-80 h-80 object-cover rounded-lg shadow-2xl transform transition-transform duration-300 group-hover:scale-[1.05]"
+            />
+          </div>
+        </div>
+
+        <!-- Columna derecha - Información -->
+        <div class="text-white space-y-4">
+          <h3 class="text-3xl md:text-4xl font-bold text-white">
+            {content.directivo.members[0].name}
+          </h3>
+          <p class="text-lg text-gray-300 leading-relaxed">
+            {content.directivo.members[0].description}
+          </p>
+          <p class="text-xl font-semibold text-teal-400">
+            {content.directivo.members[0].position}
+          </p>
+        </div>
+      </div>
+
+      <!-- Resto de miembros - Grid de cards -->
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto"
+      >
+        {
+          content.directivo.members.slice(1).map((member) => (
             <div class="bg-gray-800/50 backdrop-blur-lg rounded-lg p-6 border border-gray-700/50 hover:border-teal-500/50 transition-all duration-300 hover:transform hover:scale-105">
               <div class="text-center text-white space-y-3">
-                <h4 class="text-lg font-bold text-white">
-                  {member.name}
-                </h4>
+                <h4 class="text-lg font-bold text-white">{member.name}</h4>
                 <p class="text-sm text-gray-300 leading-relaxed">
                   {member.description}
                 </p>
@@ -334,32 +349,33 @@ const content = {
                 </p>
               </div>
             </div>
-          ))}
-        </div>
+          ))
+        }
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Sección Comité Técnico -->
-    <section class="relative py-12 pb-20">
-      <!-- Overlay oscuro para mejorar legibilidad -->
-      <div class="absolute inset-0 bg-black/50 z-5"></div>
-      <div class="relative z-10 container mx-auto px-4">
-        
-        <!-- Título principal centrado -->
-        <div class="text-center mb-12">
-          <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
-            {content.tecnico.title}
-          </h2>
-        </div>
+  <!-- Sección Comité Técnico -->
+  <section class="relative py-12 pb-20">
+    <!-- Overlay oscuro para mejorar legibilidad -->
+    <!-- <div class="absolute inset-0 bg-black/50 z-5"></div> -->
+    <div class="relative z-10 container mx-auto px-4">
+      <!-- Título principal centrado -->
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+          {content.tecnico.title}
+        </h2>
+      </div>
 
-        <!-- Grid de miembros del comité técnico -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
-          {content.tecnico.members.map((member) => (
+      <!-- Grid de miembros del comité técnico -->
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-6xl mx-auto"
+      >
+        {
+          content.tecnico.members.map((member) => (
             <div class="bg-gray-800/50 backdrop-blur-lg rounded-lg p-6 border border-gray-700/50 hover:border-teal-500/50 transition-all duration-300 hover:transform hover:scale-105">
               <div class="text-center text-white space-y-3">
-                <h4 class="text-lg font-bold text-white">
-                  {member.name}
-                </h4>
+                <h4 class="text-lg font-bold text-white">{member.name}</h4>
                 <p class="text-sm text-gray-300 leading-relaxed">
                   {member.description}
                 </p>
@@ -368,11 +384,11 @@ const content = {
                 </p>
               </div>
             </div>
-          ))}
-        </div>
+          ))
+        }
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </Layout>
 
 <style>
@@ -387,7 +403,7 @@ const content = {
       transform: translateY(0);
     }
   }
-  
+
   section > div {
     animation: fadeInUp 0.8s ease-out;
   }

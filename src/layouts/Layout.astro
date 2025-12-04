@@ -1,97 +1,136 @@
 ---
-import NavBar from '../components/Navbar/NavBar.astro';
-import BackgroundLines from '../components/Background/BackgroundEffect.astro';
-import '../styles/global.css';
-import BackgroundEffect from '../components/Background/BackgroundEffect.astro';
+import NavBar from "../components/Navbar/NavBar.astro";
+// import BackgroundEffect from "../components/Background/BackgroundEffect.astro";
+import "../styles/global.css";
+
 export interface Props {
   title: string;
 }
 const { title } = Astro.props;
 ---
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="description" content="IXSY - Internet Exchange Service Yucatán" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta
+      name="description"
+      content="IXSY - Internet Exchange Service Yucatán"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <title>{title}</title>
   </head>
-  <body class="text-white min-h-screen flex flex-col">
-    <!-- Fondo de líneas generado por código -->
-    <BackgroundEffect />
-    <div class="site-content"></div>
-    <NavBar />
-    <main class="flex-grow pt-16">
-      <slot />
-    </main>
-   
-    <footer class="relative text-white overflow-hidden bg-black/30 backdrop-blur-sm">
-      <div class="relative z-10 container mx-auto px-4 py-12">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          <!-- Logo -->
-          <div class="flex flex-col items-start">
-            <div class="flex items-center mb-4">
-              <img src="/ixsy_logo_letras.svg" alt="Logo IXSY" class="h-20 w-auto mr-3" />
+  <body class="relative text-white min-h-screen flex flex-col">
+    <!-- Capa 1: fondo negro + glow del cursor (fixed, siempre visible) -->
+    <!-- <BackgroundEffect /> -->
+
+    <!-- Capa 2: fondo de líneas verdes (absolute, se mueve con scroll, se ve completa y se repite) -->
+    <div
+      class="absolute inset-0 pointer-events-none z-10 bg-top bg-repeat-y"
+      style="background-image: url('/fondo_transparente.png'); background-size: 100% auto;"
+    >
+      <div class="absolute inset-0 bg-black/50 z-5"></div>
+    </div>
+
+    <!-- Capa 3: contenido del sitio -->
+    <div class="site-content flex flex-col min-h-screen">
+      <NavBar />
+      <main class="flex-grow pt-16">
+        <slot />
+      </main>
+
+      <footer
+        class="relative text-white overflow-hidden bg-black/30 backdrop-blur-sm"
+      >
+        <div class="relative z-10 container mx-auto px-4 py-12">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <!-- Logo -->
+            <div class="flex flex-col items-start">
+              <div class="flex items-center mb-4">
+                <img
+                  src="/ixsy_logo_letras.svg"
+                  alt="Logo IXSY"
+                  class="h-20 w-auto mr-3"
+                />
+              </div>
+            </div>
+
+            <!-- Síguenos -->
+            <div class="text-center">
+              <h3 class="text-lg font-semibold mb-4 text-white-400">
+                SÍGUENOS
+              </h3>
+              <div class="flex justify-center space-x-4">
+                <a
+                  href="https://x.com/ixp_yucatan"
+                  class="w-10 h-10 bg-gray-800 hover:bg-teal-500 rounded-lg flex items-center justify-center transition-colors duration-300"
+                >
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a
+                  href="https://mx.linkedin.com/company/ixpyuc"
+                  class="w-10 h-10 bg-gray-800 hover:bg-teal-500 rounded-lg flex items-center justify-center transition-colors duration-300"
+                >
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a
+                  href="https://www.facebook.com/IXPYUC/"
+                  class="w-10 h-10 bg-gray-800 hover:bg-teal-500 rounded-lg flex items-center justify-center transition-colors duration-300"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Horarios -->
+            <div class="text-center md:text-right">
+              <h3 class="text-lg font-semibold mb-4 text-white-400">
+                HORARIOS
+              </h3>
+              <div class="text-sm text-gray-300 space-y-1">
+                <p>Lunes - Viernes: 09:00 a.m. - 05:00 p.m.</p>
+                <p>Sábado: CERRADO</p>
+                <p>Domingo: CERRADO</p>
+              </div>
             </div>
           </div>
-         
-          <!-- Sección Síguenos -->
-          <div class="text-center">
-            <h3 class="text-lg font-semibold mb-4 text-white-400">SÍGUENOS</h3>
-            <div class="flex justify-center space-x-4">
-              <a href="https://x.com/ixp_yucatan" class="w-10 h-10 bg-gray-800 hover:bg-teal-500 rounded-lg flex items-center justify-center transition-colors duration-300">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="https://mx.linkedin.com/company/ixpyuc" class="w-10 h-10 bg-gray-800 hover:bg-teal-500 rounded-lg flex items-center justify-center transition-colors duration-300">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-              <a href="https://www.facebook.com/IXPYUC/" class="w-10 h-10 bg-gray-800 hover:bg-teal-500 rounded-lg flex items-center justify-center transition-colors duration-300">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-            </div>
-          </div>
-         
-          <!-- Horarios -->
-          <div class="text-center md:text-right">
-            <h3 class="text-lg font-semibold mb-4 text-white-400">HORARIOS</h3>
-            <div class="text-sm text-gray-300 space-y-1">
-              <p>Lunes - Viernes: 09:00 a.m. - 05:00 p.m.</p>
-              <p>Sábado: CERRADO</p>
-              <p>Domingo: CERRADO</p>
+
+          <!-- Línea divisora -->
+          <div class="border-t border-gray-700 pt-6">
+            <div class="text-center">
+              <p class="text-gray-400 text-sm">
+                Copyright © 2025 IXSY.org.mx - Todos los derechos reservados.
+              </p>
             </div>
           </div>
         </div>
-       
-        <!-- Línea divisora -->
-        <div class="border-t border-gray-700 pt-6">
-          <div class="text-center">
-            <p class="text-gray-400 text-sm">
-              Copyright © 2025 IXSY.org.mx - Todos los derechos reservados.
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
   </body>
 </html>
 
 <style is:global>
-  .site-content {  
-    position: relative;  
-    z-index: 1; /* por encima del background */  
-  }
+  html,
   body {
     margin: 0;
     padding: 0;
     background-color: #000;
-    position: relative;
   }
-  
-  /* Asegurar que el contenido esté por encima del background */
-  main, nav, footer {
+
+  .site-content {
     position: relative;
-    z-index: 1;
+    z-index: 20; /* por encima del glow y del fondo de líneas */
+  }
+
+  main,
+  nav,
+  footer {
+    position: relative;
+    z-index: 20;
   }
 </style>

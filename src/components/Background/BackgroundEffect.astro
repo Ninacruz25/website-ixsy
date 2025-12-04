@@ -1,15 +1,11 @@
----
-// BackgroundEffect.astro
----
-
 <div class="bgfx">
   <div class="cursor-glow" id="cursor-glow"></div>
 </div>
 
 <script>
-  const glow = document.getElementById('cursor-glow');
+  const glow = document.getElementById("cursor-glow");
   if (glow) {
-    document.addEventListener('mousemove', (e) => {
+    document.addEventListener("mousemove", (e) => {
       glow.style.left = `${e.clientX}px`;
       glow.style.top = `${e.clientY}px`;
     });
@@ -21,9 +17,9 @@
   .bgfx {
     position: fixed;
     inset: 0;
-    z-index: 0;          /* detrás del contenido normal */
+    z-index: 0; /* detrás del contenido normal */
     pointer-events: none;
-    background: #000;    /* fondo negro real */
+    background: #000; /* fondo negro real */
     overflow: hidden;
   }
 

@@ -77,7 +77,7 @@ const content = {
   <!-- Contenedor principal con fondo único -->
   <div 
     class="min-h-screen bg-cover bg-center"
-    style="background-image: url('/IXSY.svg');"
+    
     x-data="{
       activeYear: 'overview',
       setActiveYear(year) {
@@ -88,7 +88,7 @@ const content = {
     <!-- Hero Section -->
     <section class="relative py-20 pt-32">
       <!-- Overlay oscuro para mejorar legibilidad -->
-      <div class="absolute inset-0 bg-black/50 z-5"></div>
+      <!-- <div class="absolute inset-0 bg-black/50 z-5"></div> -->
       <div class="relative z-10 container mx-auto px-4">
         <div class="text-center mb-4">
           <h1 
@@ -208,7 +208,7 @@ const content = {
 
     <!-- Sección Descripción del Programa - Solo visible en vista overview -->
     <section x-show="activeYear === 'overview'" x-transition class="relative py-1">
-      <div class="absolute inset-0 bg-black/50 z-5"></div>
+      <!-- <div class="absolute inset-0 bg-black/50 z-5"></div> -->
       <div class="relative z-10 container mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center mb-16">
           <p class="text-lg text-gray-300 leading-relaxed mb-8">
@@ -247,7 +247,7 @@ const content = {
 
     <!-- Sección Objetivos - Solo visible en vista overview -->
     <section x-show="activeYear === 'overview'" x-transition class="relative py-16">
-      <div class="absolute inset-0 bg-black/50 z-5"></div>
+      <!-- <div class="absolute inset-0 bg-black/50 z-5"></div> -->
       <div class="relative z-10 container mx-auto px-4">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
@@ -277,7 +277,7 @@ const content = {
 
     <!-- Sección Requisitos - Solo visible en vista overview -->
     <section x-show="activeYear === 'overview'" x-transition class="relative py-16">
-      <div class="absolute inset-0 bg-black/50 z-5"></div>
+      <!-- <div class="absolute inset-0 bg-black/50 z-5"></div> -->
       <div class="relative z-10 container mx-auto px-4">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
@@ -302,7 +302,7 @@ const content = {
 
     <!-- Sección Carousel de Imágenes - Solo visible en vista overview -->
     <section x-show="activeYear === 'overview'" x-transition class="relative py-16">
-      <div class="absolute inset-0 bg-black/50 z-5"></div>
+      <!-- <div class="absolute inset-0 bg-black/50 z-5"></div> -->
       <div class="relative z-10 container mx-auto px-4">
         <div class="text-center mb-16">
           <p class="text-lg text-gray-300 mb-8">
