@@ -4,7 +4,5 @@ import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-  integrations: [react(), tailwind()],
-  site: 'https://ninacruz25.github.io/website-ixsy/',
-  base: '/website-ixsy/',
+  integrations: [react(), tailwind()]
 });
